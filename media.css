@@ -1,0 +1,123 @@
+@media(max-width:550px){
+#navbar{
+    flex-direction: column;
+    justify-content: space-between;
+    height:150px;
+    /* border:2px solid green */
+}
+.text{
+    display: none;
+}
+#icon{
+width:100%;
+height:30%;
+
+}
+#icon img{
+    height:100%;
+    display: block;
+    margin: auto;
+}
+#navi{
+width:100%;
+height:20%;
+font-size: 10px;
+}
+#search{
+width:100%;
+height:30%;
+}
+#search i{
+    position: absolute;
+    top: 15px;
+    left: 12px;
+}
+#search input{
+   height:75%;
+   font-size: 12px;
+}
+#profile{
+width:100%;
+height:20%;
+font-size: 10px;
+}
+#pp,#wishlist,#bag{
+    height:100%;
+    padding-left: 37px;
+}
+#pp,#pp i{
+    margin-top: 0;
+   
+}
+#wishlist ,#wishlist i{
+    margin-top: 0;
+}
+#bag, #bag i{
+    margin-top: 0;
+}
+}
+
+@media(max-width:660px){
+    .body h3{
+        font-size: 16px;
+    }
+    .section1-images img {
+        width: 25%;
+        height: 210px;}
+        .section2-images{
+           justify-content: flex-start;
+        } 
+        .section2-images img{
+            width:25%;
+            height:190px;
+        }
+        .section3-images img {
+            width: 25%;
+            height: 131px;
+        }
+        .section4-images img {
+            width: 25%;
+            height: 180px;
+        }
+        .section5-images img {
+            width: 25%;
+            height: 165px;
+        }
+        .section6-images img {
+            width: 25%;
+            height: 155px;
+        }
+        .section7-images img {
+            width: 25%;
+            height: 170px;
+        }
+        .section8-images img {
+            width: 50%;
+            height: 235px;
+        }
+        .section9-images img {
+            width: 25%;
+            height: 178px;
+        }
+        .section10-images img {
+            width: 50%;
+            height: 220px;
+        }
+        /* .footer{
+            display: block;
+        } */
+        #section{
+            display: none;
+        }
+        .footer2{
+            background-color: rgb(233, 229, 229);
+            display: block;
+        }
+        .footer2 p{
+            /* width:30%;
+            margin:auto;
+           text-align: center; */
+           display: block;
+        }
+}
+    
