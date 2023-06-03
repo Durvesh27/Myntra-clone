@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+
+    <title>login page</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+
+    }
+    .main{
+        width:100%;
+    }
+    #navbar {
+        width: 100%;
+        height: 80px;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+    }
+
+    #icon {
+        width: 5%;
+        /* border:1px solid blue; */
+        box-sizing: border-box;
+    }
+
+    #icon img {
+        width: 105px;
+        height: 60px;
+        margin-top: 15px;
+    }
+
+    #navi {
+        width: 35%;
+        /* border:1px solid blue; */
+        display: flex;
+        /* justify-content: space-evenly; */
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+        
+    }
+    #navi div{
+        padding: 0 17px;
+    }
+    
+
+    #search {
+        width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    #search input {
+        height: 45%;
+        width: 90%;
+        padding-left: 43px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: rgb(243, 239, 239);
+
+    }
+
+    #search i {
+        margin-right: 10px;
+        position: absolute;
+        top: 33px;
+        left: 69px;
+    }
+
+    #profile {
+        width: 10%;
+        height: 80px;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+
+    }
+
+    #wishlist {
+        width: 50%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #wishlist i {
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+
+
+
+    #bag {
+        width: 50%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #bag i {
+        margin-top: 20px;
+        margin-left: 25px;
+        margin-right: 20px;
+    }
+
+
+    .body{
+        background: linear-gradient(to bottom right,#feedf6,#fcf0e2);
+        width:100vw;
+        padding: 30px 0;
+    }
+    .mainBox{
+        width:27%;
+        height:80vh;
+        
+        margin: auto;
+        
+        background-color: white;
+        
+    }
+    .mainBox img{
+        width:100%;
+    }
+    .second{
+        padding: 36px 36px 0;
+    }
+    .second div:nth-child(1){
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .second input{
+        width:100%;
+        padding-left: 12px;
+        box-sizing: border-box;
+        height:38px;
+        border:none;
+        outline: none;
+        border: 1px solid rgb(204, 202, 202);
+        margin: 10px 0;
+    }
+    .second p:nth-child(4){
+        font-size: 13px;
+        margin-top: 30px;   
+        margin-bottom: 20px;  
+        color: rgba(40,44,63,.8); 
+    }
+    .second p:nth-child(6){
+        font-size: 13px;
+        margin-top: 30px;   
+        margin-bottom: 20px; 
+        color: rgba(40,44,63,.8);  
+    }
+    .second p b {
+     color:   #ff3f6c;
+    }
+    .second button{
+        display: block;
+width: 100%;
+margin: auto;
+height: 40px;
+background-color: #ff3f6c;
+border: none;
+outline: none;
+font-weight: bold;
+color: white;
+    }
+    
+</style>
+</head>
+
+<body>
+<!-- Navbar -->
+<div class="main">
+    <div id="navbar">
+        <div id="icon">
+            <a href="index.html">
+                <img src="./myntraLOGO.webp" alt="">
+            </a>
+        </div>
+        <div id="navi">
+            <div>Men</div>
+            <div>Women</div>
+            <div>Kids</div>
+            <div>Home & Living</div>
+            <div>Studio</div>
+            
+
+        </div>
+        <div id="search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+
+            <input type="search" placeholder="Search for products,brands and more" />
+
+        </div>
+        <div id="profile">
+            
+            <div id="wishlist">
+                <i class="fa-solid fa-cart-shopping "></i>
+                <div style="margin-top: 3px;margin-left: 20px;">Wishlist</div>
+            </div>
+            <div id="bag">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <div style="margin-top: 3px;margin-left: 20px;">Bag</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- body -->
+<div class="body">
+<div class="mainBox">
+<img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2023/2/7/c2be095d-a4fb-4981-bdad-9d69ea189da31675792659902-offer-banner-500-600x240-code-_-MYNTRA200.jpg" alt="">
+<div class="second">
+ <div><b>Login</b></div>
+
+<input type="email" placeholder="Enter Email Address">
+<input type="password" placeholder="Enter your password">
+
+
+<p>By continuing,i agree to the <b>Terms of use</b > & <b>Privacy policy</b><p>
+<button>
+    CONTINUE
+</button>
+
+<p>Have trouble logging in ? <b>Get help</b></p>
+
+</div>
+</div>
+</div>
+</body>
+</html>

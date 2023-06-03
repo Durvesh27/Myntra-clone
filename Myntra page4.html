@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Kart Page</title>
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Assistant,Helvetica,Arial,sans-serif!important;
+
+        }
+        .navbar{
+            width: 100%;
+            height: 78px;
+            border: 1px solid rgb(243, 241, 241);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Assistant,Helvetica,Arial,sans-serif!important;
+        }
+
+        .image ,.middle,.last{
+            width:30%;
+        }
+        .image{
+            padding-left: 50px;
+            box-sizing: border-box;
+        }
+        .image img{
+          width:25%;
+          height:55px;  
+        }
+        .middle ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        letter-spacing: 3px;
+        
+        font-weight: bold;
+        }
+        
+        .middle ul li a{
+        text-decoration: none;
+        color: #535766;
+        }
+        .middle ul li:nth-child(1){
+        padding-bottom: 3px;
+    border-bottom: 2px solid #20BD99;
+        }
+        .middle ul li:nth-child(1) a{
+            
+            color: #20BD99;
+        }
+        .dot{
+    border-top: 1px dashed #696B79;
+    height: 4px;
+    width: 10%;
+    margin-top: 7px;
+    margin-left: 20px;
+    margin-right: 20px;
+        }
+        .last{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 70px;
+            font-size: 12px;
+            color: #535766;
+        }
+        
+        .last p{
+            letter-spacing: 3px;
+            font-weight: bold;
+           margin-left: 6px;
+           margin-top: 8px;
+        }
+        .last img{
+            width:5.65%;
+            height: 28px;
+        }
+
+        .section{
+            max-width: 980px;
+            /* height: 600px; */
+            margin: auto;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaeaec;
+            /* border: 1px solid red; */
+    display: flex;
+
+        }
+        .left{
+    width: 64%;
+    padding-right: 20px;
+    border-right: 1px solid #eaeaec;
+    padding-top: 32px;
+    /* border: 1px solid red; */
+        }
+        .right{
+    width: 35%;
+    padding: 24px 0 0 16px;
+    /* border: 1px solid red; */
+        }
+        .details{
+            border-radius: 4px;
+    border: 1px solid #eaeaec;
+            padding: 16px;
+            display: flex;
+           justify-content: space-between;
+          
+        }
+        .div1{
+            line-height: 20px;
+        }
+        .div1> p:nth-child(1){
+           font-size: 14px;
+           color: #535766;
+        }
+        .div1> p:nth-child(2){
+           font-size: 12px;
+           color: #535766;
+        }
+        .div2 button{
+            background: white;
+    border: 1px solid #ff3f6c;
+    height: 90%;
+    padding: 8px 14px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ff3f6c;
+}
+       .offer{
+        margin:15px 0;
+        padding: 16px;
+        line-height: 25px;
+        font-size: 14px;
+        border-radius: 4px;
+    border: 1px solid #eaeaec;
+       } 
+       .offer ul{
+        padding-left: 10px;
+        font-size: 13px;
+       }
+       .offer p{
+        font-weight: bold;
+    color: #ff3f6c;
+    padding-left: 10px;
+
+       }
+       .seller{
+        margin:15px 0;
+        padding: 12px;
+        line-height: 25px;
+        font-size: 14px;
+        border-radius: 4px;
+    border: 1px solid #eaeaec;
+       }
+       .seller p{
+        padding-left: 22px;
+       }
+       .item{
+        margin:15px 0;
+        padding: 12px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        border-radius: 4px;
+    border: 1px solid #eaeaec;
+       }
+       .item div:nth-child(1){
+        display: flex;
+       }
+       .item img{
+        width:24px;
+        height:24px;
+       }
+       .item p{
+        padding-top: 3px;
+        padding-left: 3px;
+       }
+       
+       .item .p2{
+        font-size: 12px;
+        font-weight: bold;
+    color: #ff3f6c;
+
+       }
+       .p1 p{
+        font-weight: bold;
+        color: black;
+       }
+       .select{
+        padding-left: 25px;
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+       }
+       .pri{
+        display: flex;
+        align-items: center;
+        width:35%;
+       }
+       .pri input{
+        width:16px;
+        height:16px
+       }
+       .sec{
+        display: flex;
+        align-items: center;
+        width:36%;
+        font-size: 12px;
+        font-weight: bold;
+       }
+       .product{
+        
+        padding: 10px;
+        border: 1px solid #eaeaec;
+
+        display: flex;
+        position: relative;
+        line-height: 20px;
+        margin-bottom: 10px;
+       }
+       .product img{
+        width:111px;
+        height: 148px;
+        margin-right: 10px;
+
+       }
+       .product input{
+       width:16px;
+       height: 16px;
+       position: absolute;
+       top:16px;
+       left:17px
+       }
+       .product .info p:nth-child(2){
+        font-size: 14px;
+       }
+       .product .info p:nth-child(3){
+        font-size: 12px;
+        color: #94969f;
+       }
+       .num{
+        margin-top: 5px;
+        margin-bottom: 10px;
+       }
+       .same{
+        width: 17%;
+    padding: 2px;
+    margin-right: 5px;
+    background: #f5f5f6;
+    border: none;
+}
+       
+     .secText {
+        margin-left: 5px;
+    }
+
+     .secText strong {
+        font-size: 14px;
+    }
+
+    .secText span {
+        font-size: 12px;
+        color: grey
+    }
+
+     .secText b {
+        font-size: 12px;
+        color: rgb(255, 204, 110)
+    }
+    .product:after{
+  display: inline-block;
+  font-size: 40px;
+  content: "\00d7"; 
+  position: relative;
+  left:77px
+}
+.wish{
+    font-weight: 700;
+    font-size: 14px;
+    padding: 16px 12px 16px 16px;
+    margin-top: 24px;
+    border: 1px solid #eaeaec;
+    border-radius: 4px;
+}
+.wish span{
+    float: right;
+}
+.coupon{
+    border-bottom: 1px solid #eaeaec;
+
+}
+.coupon span{
+  font-size: 14px;
+  font-weight: bold;  
+
+}
+.apply{
+    float: right;
+    
+    background: white;
+    border: 1px solid #ff3f6c;
+    color: #ff3f6c;
+    margin-top: -4px;
+    width: 21%;
+    height: 28px;
+}
+.coupon .mb{
+    margin-bottom: 30px;
+}
+.box1{
+    border: 1px solid grey;
+    display: inline-block;
+    margin:0 5px;
+    padding: 5px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.price{
+    margin-top:30px;
+    padding-bottom:15px;
+    border-bottom: 1px solid #eaeaec;
+
+   
+}
+.price h5{
+    margin-bottom:15px;
+    font-size: 12px;
+}
+.price-flex{
+    font-size: 14px;
+}
+.price-flex div{
+    line-height: 30px;
+    display: inline-block;
+}
+.footer{
+    margin-top: 10px;
+}
+.footer-section{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.footerimg img{
+    width:70px;
+    height:37px
+}
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="image">
+        <a href="index.html">
+            <img src="./myntraLOGO.webp" alt="">
+        </a>
+    </div>
+    <div class="middle">
+        <ul>
+            <li><a href="">BAG</a></li> 
+            <li class="dot"></li>
+            <li><a href="">ADDRESS</a></li> 
+            <li class="dot"></li>
+            <li><a href="">PAYMENT</a></li>
+            </ul>
+    </div>
+    <div class="last">
+        <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png">
+        <p>100% SECURE</p>
+    </div>
+     
+   </div>
+<div class="section">
+<div class="left">
+    <div class="details">
+        <div class="div1">
+        <p>Deliver to: <b style="color: black;">Durvesh Nakhawa 400702</b></p>
+        <p>Karanja Navapada, Tal-Uran, Dist-Raigad, Hanuman Mandir, Uran</p>
+        </div>
+        <div class="div2">
+            <button>
+                CHANGE ADDRESS
+            </button>
+        </div>
+        
+    </div>
+    <div class="offer">
+        <i class="fa-solid fa-percent"></i>
+        <b>&nbsp;&nbsp;Available offers</b>
+        <ul class="list">
+            <li>10% Instant Discount on ICICI Bank Credit and Debit Cards on a min spend of Rs 3,500.TCA</li>
+            <!-- <li>10% Cashback upto Rs 200 on Paytm Wallet and Postpaid transaction on a min spend of Rs 2,000. TCA</li>
+            <li>2x Cashback upto Rs 500 or Flat Rs 150 Cashback for select users on CRED Pay UPI on a min spend of Rs 1000. Available only on Android Devices. TCA</li>
+            <li>5% Unlimited Cashback on Flipkart Axis Bank Credit Card. TCA</li>
+            <li>Flat 10% Cashback upto Rs 200 on Airtel Payments Bank transactions on a min spend of Rs 1000. TCA</li>
+            <li>10% Cashback upto Rs 150 on Freecharge Paylater transaction. TCA</li> -->
+        </ul>
+        <p>Show more</p>
+    </div>
+    <div class="seller">
+        <i class="fa-solid fa-user-tie"></i>
+        <b>&nbsp;&nbsp;Seller has changed</b>
+        <p>Seller of one or more items in your bag has changed. Please review them before proceeding.</p>
+    </div>
+    <div class="item">
+        <div class="p1">
+        <img src="https://constant.myntassets.com/checkout/assets/img/oos.webp" alt="">
+
+            <p>Items out of Stock</p></div>
+        <p class="p2">VIEW</p>
+    </div>
+
+    <div class="select">
+        <div class="pri">
+            <input type="checkbox" />
+            <p>&nbsp;&nbsp;<b>2/2 ITEMS SELECTED</b></p>
+        </div>
+        <div class="sec">
+            <p>REMOVE&nbsp;&nbsp;&nbsp;&nbsp;|</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;MOVE TO WISHLIST</p>
+        </div>
+    </div>
+    <div class="product">
+        <div>
+            <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg" alt="">
+            <input type="checkbox"/>
+        </div>
+     <div class="info">
+        <h4>Huetrap</h4>
+        <p>Men Beige & Black Typography Printed Sustainable T-shirt</p>
+        <p>Sold by-Huetrap clothing</p>
+        <div class="num">
+            <button class="same">
+                <b>Size:L</b>
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <button class="same">
+                <b>Qty:1</b>
+                <i class="fa-solid fa-caret-down"></i>
+            </button>
+        </div>
+        <span class="secText">
+            <strong>&#8377;649 </strong>
+            <span>MRP
+                <del>&#8377;1850</del>
+            </span>
+            <b>(77% OFF)</b>
+        </span>
+        <p style="font-size: 12px;margin: 2px 0;padding-left: 5px;color: #282c3f;"><b>14 Days</b> Returnable</p>
+        <p style="font-size: 12px;padding-left: 5px;color: #282c3f;">Delivery by <b>9th June 2023</b></p>
+     </div>
+     
+    </div>
+    <div class="product">
+        <div>
+            <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18962626/2022/7/15/a34aaf1d-0731-42aa-9ae0-0f8befb8e5d81657868296704-Nike-Pro-Dri-FIT-Mens-Short-Sleeve-Top-2441657868296269-1.jpg" alt="">
+            <input type="checkbox"/>
+        </div>
+     <div class="info">
+        <h4>Nike</h4>
+        <p>Mens Red soft dri-fit T-Shirt for regular & Casual use wear</p>
+        <p>Sold by-Nike India</p>
+        <div class="num">
+            <button class="same">
+                <b>Size:L</b>
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <button class="same">
+                <b>Qty:1</b>
+                <i class="fa-solid fa-caret-down"></i>
+            </button>
+        </div>
+        <span class="secText">
+            <strong>&#8377;987 </strong>
+            <span>MRP
+                <del>&#8377;1450</del>
+            </span>
+            <b>(45% OFF)</b>
+        </span>
+        <p style="font-size: 12px;margin: 2px 0;padding-left: 5px;color: #282c3f;"><b>14 Days</b> Returnable</p>
+        <p style="font-size: 12px;padding-left: 5px;color: #282c3f;">Delivery by <b>9th June 2023</b></p>
+     </div>
+    </div>
+   <div class="wish">
+    Add more items from Wishlist
+    <span>></span>
+   </div> 
+</div>
+<div class="right">
+    <div class="coupon">
+        <h5 style="margin-bottom: 10px;">COUPONS</h5>
+        <div class="mb">
+            <i class="fa-solid fa-tag"></i>
+            <span>Apply Coupons</span>
+            <button class="apply">APPLY</button>
+        </div>
+        <p style="font-size: 12px;font-weight: 700;color: #282c3f;margin-bottom: 25px;">SUPPORT TRANSFORMATIVE WORK IN INDIA</p>
+        <div style="margin-bottom: 20px;">
+            <input style="width:16px;height:16px"type="checkbox" name="" id="">
+
+            <span style="font-size: 14px;margin-top: 8px;" >&nbsp;Support us</span>
+        </div>
+    
+       <div class="boxx">
+        <div class="box1">Rs.10</div>
+        <div class="box1">Rs.50</div>
+        <div class="box1">Rs.100</div>
+       </div>
+    
+    <p style="margin:25px 0;color: #ff3f6c;font-size: 14px;font-weight: 700;">Know more</p>
+    </div>
+    <div class="price">
+        <h5>PRICE DETAILS (2 Items)</h5>
+        <div class="price-flex">
+            <div style="margin-right: 150px;">Total MRP</div>
+            <div>Rs.3094</div>
+        </div>
+        <div class="price-flex">
+            <div style="margin-right: 101px;">Discount on MRP</div>
+            <div>-Rs.1978</div>
+        </div>
+        <div class="price-flex">
+            <div style="margin-right: 75px;">Coupon Discount</div>
+            <div style="color: #ff3f6c;">Apply coupon</div>
+        </div>
+        <div class="price-flex">
+            <div style="margin-right: 132px;">Convinience fee</div>
+            <div>Rs.10</div>
+        </div>
+        
+    </div>
+    <div class="price-flex">
+        <div style="margin-right: 132px; font-weight: 700;">Total amount</div>
+        <div style="font-weight: 700;">Rs.1126</div>
+    </div>
+    <button style="width:100%;height:40px;margin-top: 10px;background-color: white;border:1px solid #ff3f6c;background-color:#ff3f6c;color:white;font-weight: 700;">
+        PLACE ORDER
+    </button>
+</div>
+</div>
+<div class="footer">
+    <div class="footer-section">
+        <div class="footerimg">
+            <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ssl.png" alt="">
+        <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-visa.png" alt="">
+        <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-mc.png" alt="">
+        <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ae.png" alt="">
+        <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-dc.png" alt="">
+        <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-nb.png" alt="">
+        <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-cod.png" alt="">
+        <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-rupay.png" alt="">
+        <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-paypal.png" alt="">
+        <img src="https://constant.myntassets.com/checkout/assets/img/footer-bank-bhim.png" alt="">
+        </div>
+        <h4 style="font-size: 14px;padding: 10px 0;">Need help? Contact us</h4>
+    </div>
+   
+</div>
+</body>
+</html>
