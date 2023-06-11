@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Products page</title>
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #main {
+        width: 100%;
+        /* height: 1200px; */
+        /* border: 2px solid black; */
+    }
+
+    #navbar {
+        width: 100%;
+        height: 80px;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+        z-index: 10;
+    }
+
+    #icon {
+        width: 5%;
+        /* border:1px solid blue; */
+        box-sizing: border-box;
+    }
+
+    #icon img {
+        width: 105px;
+        height: 60px;
+        margin-top: 15px;
+    }
+
+    #navi {
+        width: 35%;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+        position: relative;
+    }
+    #navi div a{
+    text-decoration: none;
+    color:black;
+}
+    .text {
+        position: absolute;
+        top: 28px;
+        right: 3px;
+        font-size: 10px;
+        font-weight: 645;
+        color: #ff3f6c;
+    }
+
+    #search {
+        width: 30%;
+        display: flex;
+        align-items: center;
+
+        position: relative;
+    }
+
+    #search input {
+        height: 45%;
+        width: 100%;
+        padding-left: 43px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: rgb(243, 239, 239);
+
+    }
+
+    #search i {
+        margin-right: 10px;
+        position: absolute;
+        top: 33px;
+        left: 12px;
+    }
+
+    #profile {
+        width: 15%;
+        height: 80px;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+
+    }
+
+    #pp {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #pp i {
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+
+    #wishlist {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #wishlist i {
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+
+
+
+    #bag {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #bag i {
+        margin-top: 20px;
+        margin-left: 25px;
+        margin-right: 20px;
+    }
+
+    /* body CSS */
+    #body {
+        width: 100%;
+        /* height: 800px; */
+        border: 1px solid #edebef;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+
+    #body>div:nth-child(1) {
+        width: 16%;
+        /* border: 1px solid red; */
+
+    }
+
+    #body>div:nth-child(1) h4 {
+        margin-bottom: 10px;
+
+    }
+
+    #rightSection {
+        width: 84%;
+        border-left: 1px solid #edebef;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        /* padding-top: 25px;
+        padding-left: 15px; */
+        padding-top: 24px;
+    padding-left: 15px;
+    padding-right: 20px;
+    }
+
+    .top1 {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        margin-left: 20px;
+    }
+
+    .top1 p:nth-child(1) {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .top1 p:nth-child(2) {
+        font-size: 16px;
+    }
+
+    .top2 {
+        display: flex;
+    }
+
+    .top2 p {
+        font-weight: bold;
+        width: 11%;
+        padding-left: 27px;
+        box-sizing: border-box;
+    }
+    .clear{
+    font-size: 14px;
+    color:#ff3f6c;
+    text-transform: uppercase;
+    visibility: hidden;
+    }
+    .top2 .drop {
+        width: 85%;
+        display: flex;
+    }
+
+    .top2 .drop div {
+        font-size: 14px;
+        margin-right: 20px;
+    }
+
+    .top2 .drop div select {
+        border: none;
+        outline: none;
+
+    }
+
+    .top2 .drop-option {
+        width: 30%;
+    }
+
+    .top2 .drop-option select {
+        margin: auto;
+        display: block;
+        width: 60%;
+        height: 35px;
+    }
+
+    #leftSection {
+        margin-top: 20px;
+    }
+
+    #leftSection div:nth-child(1) {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+    }
+
+    #leftSection div:nth-child(2){
+        margin-bottom: 15px;
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(4){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(5){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(6){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection .more{
+        font-size: 15px;
+    margin: 6px 0 15px 35px;
+    color: #ff3f6c;
+    }
+
+    #leftSection div h4 {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    #leftSection div input{
+        width:15px;
+        height:15px;
+        margin-right: 7px;
+    }
+    #leftSection div input,
+    label {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    #leftSection div label span{
+        font-size: 11px;
+        color:rgb(137, 136, 136)
+    }
+    #leftSection>div:nth-child(3){
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+
+    }
+    #leftSection .colour{
+        display: inline-block;
+        width:15px;
+        height:15px;
+        background-color: blue;
+        border-radius:50%;
+    }
+    #rightSection .main{
+        width: 17%;
+        height: 358px;
+        position: relative;
+        margin-bottom: 30px;
+        /* border: 1px solid blue; */
+        z-index: 1;
+    }
+
+    #rightSection .main:hover {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    #rightSection .main img {
+        width: 100%;
+        height: 78%;
+        /* margin: 26px 12px; */
+    }
+
+    #rightSection .box {
+        border: 1px solid #eaeaec;
+        background-color: hsla(0, 0%, 100%, .8);
+        color: black;
+        padding: 2px;
+        font-size: 12px;
+        position: absolute;
+        top: 240px;
+        left: 10px;
+        opacity: 0.8;
+        border-radius: 2px;
+    }
+
+    #rightSection .box>img {
+        height: 10px;
+        width: 12px;
+    }
+
+    #rightSection .secText {
+        margin-left: 10px;
+    }
+
+    #rightSection .secText strong {
+        font-size: 14px;
+    }
+
+    #rightSection .secText span {
+        font-size: 12px;
+        color: grey
+    }
+
+    #rightSection .secText b {
+        font-size: 12px;
+        color: rgb(255, 204, 110)
+    }
+
+    #rightSection .newSeason {
+        background: rgba(255, 63, 108, .8);
+        position: absolute;
+        top: 16px;
+        left: 0;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 0 4px;
+        line-height: 16px;
+    }
+
+    #rightSection .newSeason::after {
+        content: "";
+        position: absolute;
+        border-color: rgba(255, 63, 108, .5) transparent rgba(255, 63, 108, .5) rgba(255, 63, 108, .8);
+        border-style: solid;
+        border-width: 8px;
+        left: 100%;
+        width: 0;
+        height: 0;
+        top: 0;
+    }
+
+    .container {
+        /* border:1px solid red; */
+        height: 130px;
+        /* position: absolute;
+    top: 240px; */
+        width: 100%;
+        /* z-index: 10; */
+        background-color: white;
+        display: none;
+    }
+
+    #rightSection>div:hover {
+        .container {
+            display: block;
+            position: absolute;
+            top: 230px;
+            /* border: 1px solid red; */
+        }
+
+    }
+
+
+
+
+    .container button {
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 30px;
+        background: white;
+        border: 1px solid #c7c5c5;
+        border-radius: 2px;
+    }
+    .container button:hover{
+        border: 1px solid black;
+    }
+
+    .container p {
+        color: #8a8989;
+        font-size: 14px;
+        margin-left: 10px;
+        margin-top: 15.5px;
+        margin-bottom: 3px;
+    }
+
+    .container span:nth-child(3) {
+        margin-left: 10px;
+    }
+
+    #rightSection>div>h4:nth-child(2) {
+        /* margin-bottom: 2px; */
+        margin-left: 10px;
+    }
+
+    #rightSection>div>p:nth-child(3) {
+        margin-bottom: 3px;
+        font-size: 14px;
+        margin-left: 10px;
+        color: #535766;
+    }
+   #rightSection .downline{
+    width:98%;
+    height:1px;
+    background-color:#edebef ;
+   }
+   #rightSection .bottomFlex{
+    width: 100%;
+    display: flex;
+    margin: 50px 0;
+   }
+    .bottomFlex p{
+        width:33%;
+        font-size: 14px;
+       margin-top: 15px;
+    }
+    .bottomFlex .nextPage{
+        width:38%;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        
+
+    }
+    .bottomFlex .nextPage li{
+        padding: 0 10px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    .bottomFlex .nextPage li:nth-child(1){
+        background-color: black;
+        color: white;
+        height: 30px;
+        padding-top:8px;
+        
+    }
+    .bottomFlex .nextPage li:hover{
+        height: 30px;
+      border:1px solid rgb(158, 156, 156);  
+      padding-top:8px;
+    }
+    .bottomFlex .lastButton{
+        width:28%;
+        
+    }
+    .bottomFlex .lastButton button{
+        height: 45px;
+    width: 25%;
+    border: 1px solid #b9b5b5;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-left: 40px;
+    }
+    .bottomFlex .lastButton button:hover{
+    border:1px solid black;
+    }
+</style>
+
+<body>
+    <div id="main">
+
+        <div id="navbar">
+            <div id="icon">
+                <a href="index.html">
+                    <img src="./myntraLOGO.webp" alt="">
+                </a>
+                
+            </div>
+            <div id="navi">
+                <div><a href="Myntra page2A.html">Men</a></div>
+                <div><a href="Myntra page2B.html">Women</a></div>
+                <div><a href="Myntra page2C.html">Kids</a></div>
+                <div><a href="Myntra page2D.html">Home & Living</a></div>
+                <div><a href="Myntra page2E.html">Beauty</a></div>
+                <div>Studio</div>
+                <span class="text">NEW</span>
+
+            </div>
+            <div id="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                <input type="search" placeholder="Search for products,brands and more" />
+
+            </div>
+            <div id="profile">
+                <div id="pp">
+                    <i class="fa-solid fa-user "></i>
+                    <div style="margin-top: 3px;margin-left: 18px;">Profile</div>
+                </div>
+                <div id="wishlist">
+                    <i class="fa-solid fa-cart-shopping "></i>
+                    <div style="margin-top: 3px;margin-left: 20px;">Wishlist</div>
+                </div>
+                <div id="bag">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <div style="margin-top: 3px;margin-left: 20px;">Bag</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="top1">
+            <p>Home /<b> Bedding Sets</b> </p>
+            <p><b>Bedding Sets</b>-2555 items </p>
+        </div>
+        <div class="top2">
+            <p>FILTERS</p>
+            <p class="clear">Clear All</p>
+            <div class="drop">
+                <div>
+                    <span>Bed size</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Bundles</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Country of Origin</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Fabric</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Pattern type</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Rating</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Size</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Sustainable</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Utility</span>
+                    <select></select>
+                </div>
+
+            </div>
+            <div class="drop-option">
+                <select>
+                    <option>Recommended</option>
+                    <option>Whats new</option>
+                    <option>Popularity</option>
+                    <option>Discounts</option>
+                    <option>Price:High-to-low</option>
+                    <option>Price:Low-to-high</option>
+                </select>
+            </div>
+        </div>
+        <div id="body">
+            <div id="leftSection">
+             <div>
+                <input type="radio" />
+                <label><b>Men</b></label><br />
+                <input type="radio" />
+                <label><b>Women</b></label><br />
+                <input type="radio" />
+                <label><b>Boys</b></label><br />
+                <input type="radio" />
+                <label><b>Girls</b></label>  
+             </div>
+                <div>
+                    <h4>BRAND</h4>
+                    <input type="checkbox" />
+                    <label>JC Collection <span>&nbsp;(15631)</span></label><br />
+                    
+                    <input type="checkbox" />
+                    <label>Layers<span>&nbsp;(1567)</span></label><br />
+                    
+                    <input type="checkbox" />
+                    <label>HOUMN<span>&nbsp;(15861)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Home Grace<span>&nbsp;(14569)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Romee<span>&nbsp;(11831)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Divine CASA<span>&nbsp;(7536)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Boutique Living India<span>&nbsp;(2255)</span></label>
+                    <p class="more">+33 more</p>
+                </div>
+            
+                
+                <div>
+                    <h4>COLOUR</h4>
+                    <input type="checkbox" />
+                    <span class="colour"></span>
+                    <label>Blue<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:green"></span>
+                    <label>Green<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:red"></span>
+                    <label>Red<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:pink"></span>
+                    <label>Pink<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:yellow"></span>
+                    <label>Yellow<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:navy"></span>
+                    <label>Navy blur<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:Black"></span>
+                    <label>Black<span>&nbsp;(3312)</span></label>
+                    <p class="more">+38 more</p>
+                </div>
+
+                <div>
+                <h4>PRICE</h4>
+                <input type="checkbox"/>
+                <label>Rs. 490 to Rs. 9269<span>&nbsp;(249783)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 9269 to Rs. 15680<span>&nbsp;(33)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 15680 to Rs. 58999<span>&nbsp;(7)</span></label>
+                </div>
+                <div>
+                <h4>DISCOUNT RANGE</h4>
+                <input type="radio"/>
+                <label>10% and above</label><br />
+                <input type="radio"/>
+                <label>20% and above</label><br />
+                <input type="radio"/>
+                <label>30% and above</label><br />
+                <input type="radio"/>
+                <label>40% and above</label><br />
+                <input type="radio"/>
+                <label>50% and above</label><br />
+                <input type="radio"/>
+                <label>60% and above</label><br />
+                <input type="radio"/>
+                <label>70% and above</label><br />
+                <input type="radio"/>
+                <label>80% and above</label><br />
+                </div>
+                
+
+            </div>
+            <div id="rightSection">
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22269596/2023/3/9/f4ab3dae-699a-4763-ac7b-baa9a5111f801678376795554BeddingSet1.jpg" alt="">
+                    <h4>JC Collection</h4>
+                    <p>Floral Printed Double King Be...</p>
+                    <span class="box">
+                        <b>3.9</b>
+                        <img src="./star.png" alt="">
+                        <b>| 141</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;714 </strong>
+                        <span>MRP
+                            <del>&#8377;6499</del>
+                        </span>
+                        <b>(89% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 3-4Y</p>
+                        <span class="secText">
+                            <strong>&#8377;714 </strong>
+                            <span>MRP
+                                <del>&#8377;6499</del>
+                            </span>
+                            <b>(89% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                 
+                <div class="main">
+                    <a href="Myntra page1.html">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15659726/2021/9/28/e0f98f17-49e5-469d-99f6-06af0da9b0eb1632825713227BIANCAUnisexKhakiFloral1.jpg" alt="">
+                </a>
+                    <h4>BIANKA</h4>
+                    <p>Double King Bedding Set</p>
+
+                    <span class="box">
+                        <b>4.3</b>
+                        <img src="./star.png" alt="">
+                        <b>| 584</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;2000 </strong>
+                        <span>MRP
+                            <del>&#8377;2569</del>
+                        </span>
+                        <b>(65% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 3-4Y</p>
+                        <span class="secText">
+                            <strong>&#8377;630 </strong>
+                            <span>MRP
+                                <del>&#8377;1000</del>
+                            </span>
+                            <b>(65% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+            
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18969066/2022/7/5/2ae62cd4-37bc-4719-99f5-5d7243a0951c1656999691647King-SizePrintedACComforterWithBedsheet2PillowCoverSet1.jpg" alt="">
+                    <h4>Florida</h4>
+                    <p>Floral King Bed Set</p>
+
+                    <span class="box">
+                        <b>4.2</b>
+                        <img src="./star.png" alt="">
+                        <b>| 1.1k</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;2896 </strong>
+                        <span>MRP
+                            <del>&#8377;3596</del>
+                        </span>
+                        <b>(17% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 2-3Y</p>
+                        <span class="secText">
+                            <strong>&#8377;2896 </strong>
+                            <span>MRP
+                                <del>&#8377;3596</del>
+                            </span>
+                            <b>(17% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21579920/2023/1/17/00166cbf-d896-4f02-bb68-f0f669d374b91673945996395BeddingSet1.jpg" alt="">
+                    <h4>Trident</h4>
+                    <p>4pcs Double King Bedding set</p>
+
+                    <span class="box">
+                        <b>3.7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 1.2k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1700</del>
+                        </span>
+                        <b>(80% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 2-3Y</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1700</del>
+                            </span>
+                            <b>(80% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22269636/2023/3/9/03700099-5e7e-4241-b7f9-926e4bdf20571678375813265BeddingSet1.jpg" alt="">
+                    <h4>JC Collection</h4>
+                    <p>Double King Size Bedding Set</p>
+
+                    <span class="box">
+                        <b>4.4</b>
+                        <img src="./star.png" alt="">
+                        <b>| 286</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;399 </strong>
+                        <span>MRP
+                            <del>&#8377;1332</del>
+                        </span>
+                        <b>(70% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 3-4Y</p>
+                        <span class="secText">
+                            <strong>&#8377;399 </strong>
+                            <span>MRP
+                                <del>&#8377;1332</del>
+                            </span>
+                            <b>(70% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                  <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15659688/2021/9/28/aa6ffb74-157f-471d-8813-ac1c156322be1632824744183BIANCAUnisexBlackChecked1.jpg" alt="">
+                    <h4>BIANKA</h4>
+                    <p>Double King Bedding Set</p>
+
+                    <span class="box">
+                        <b>4.2</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.3k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;2807 </strong>
+                        <span>MRP
+                            <del>&#8377;3119</del>
+                        </span>
+                        <b>(10% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;2807 </strong>
+                            <span>MRP
+                                <del>&#8377;3119</del>
+                            </span>
+                            <b>(10% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22658718/2023/4/5/2aa5ad41-de01-43aa-82f4-65b88ef4093e1680693272589LIONFISHEMBROIDEREDBEDDINGSET1.jpg" alt="">
+                    <h4>HOUMN</h4>
+                    <p>Lion Fish Bedding set</p>
+
+                    <span class="box">
+                        <b>4.7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 13</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;4160 </strong>
+                        <span>MRP
+                            <del>&#8377;5200</del>
+                        </span>
+                        <b>(20% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;4160 </strong>
+                            <span>MRP
+                                <del>&#8377;5200</del>
+                            </span>
+                            <b>(20% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20593958/2022/11/3/41f52e64-4d13-42b7-a939-7938d0aa6b261667453119992BeddingSet1.jpg" alt="">
+                    <h4>JC Collection</h4>
+                    <p>King Size Double Bedding set</p>
+
+                    <span class="box">
+                        <b>4.3</b>
+                        <img src="./star.png" alt="">
+                        <b>| 749</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;909 </strong>
+                        <span>MRP
+                            <del>&#8377;3499</del>
+                        </span>
+                        <b>(73% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;909 </strong>
+                            <span>MRP
+                                <del>&#8377;3499</del>
+                            </span>
+                            <b>(73% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21579914/2023/1/17/462ca8d1-157d-4439-83e4-e366710496db1673946051033BeddingSet1.jpg" alt="">
+                    <h4>Trident</h4>
+                    <p>King Double Bedding set</p>
+
+                    <span class="box">
+                        <b>7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.9k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;1092 </strong>
+                        <span>MRP
+                            <del>&#8377;8400</del>
+                        </span>
+                        <b>(87% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1092 </strong>
+                            <span>MRP
+                                <del>&#8377;8400</del>
+                            </span>
+                            <b>(87% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20562302/2022/10/31/c8954a6f-90bc-4293-8b98-d1e8e0d0527e1667221954387BeddingSet1.jpg" alt="">
+                    <h4>Nautica</h4>
+                    <p>Cotton Bedding Set</p>
+
+                    <span class="box">
+                        <b>2.1</b>
+                        <img src="./star.png" alt="">
+                        <b>| 12</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;1220 </strong>
+                        <span>MRP
+                            <del>&#8377;3699</del>
+                        </span>
+                        <b>(67% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1220 </strong>
+                            <span>MRP
+                                <del>&#8377;3699</del>
+                            </span>
+                            <b>(67% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15659684/2021/9/28/581724f1-8e21-4f68-ad58-366644a51ddd1632824771915BIANCAUnisexGreyAbstract1.jpg" alt="">
+                    <h4>BIANKA</h4>
+                    <p>Set of 4 Bedding Sets</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                   
+                    <span class="secText">
+                        <strong>&#8377;599 </strong>
+                        <span>MRP
+                            <del>&#8377;684</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20594376/2022/11/3/e482ef71-0ea1-45c7-8478-a9bfe9d0963a1667454345041BeddingSet1.jpg" alt="">
+                    <h4>JC Collection</h4>
+                    <p>Printed Bedding Set</p>
+
+                    <span class="box">
+                        <b>4.5</b>
+                        <img src="./star.png" alt="">
+                        <b>| 18.6K</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;999 </strong>
+                        <span>MRP
+                            <del>&#8377;1263</del>
+                        </span>
+                        <b>(25% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1325 </strong>
+                            <span>MRP
+                                <del>&#8377;1921</del>
+                            </span>
+                            <b>(25% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21579928/2023/1/17/c8da430e-6876-4d40-90ba-04d336ba77111673945923255BeddingSet1.jpg" alt="">
+                    <h4>Trident</h4>
+                    <p>4pcs Double King Bedset</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;769 </strong>
+                        <span>MRP
+                            <del>&#8377;1299</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onsize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19500504/2022/8/13/b9467631-bb31-404e-9900-b618850fdac21660395275560BeddingSet1.jpg" alt="">
+                    <h4>Nautica</h4>
+                    <p>Stripped Cotton Double King Bedset</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;550 </strong>
+                        <span>MRP
+                            <del>&#8377;800</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15659702/2021/9/28/5ac578c5-5087-4d7f-a7f4-1c44392198491632826292522BIANCAUnisexBlueAbstract1.jpg" alt="">
+                    <h4>BIANKA</h4>
+                    <p>Double Bed Comfort</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;789 </strong>
+                        <span>MRP
+                            <del>&#8377;1399</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                
+                
+                
+                <div class="downline"></div>
+                <div class="bottomFlex">
+                <p>Page 1 of 1831</p>
+                <ul class="nextPage">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+                <div class="lastButton">
+                    <button>
+                        NEXT >
+                    </button>
+                </div>
+                
+                </div>
+                
+            </div>
+        </div>
+</body>
+
+</html>

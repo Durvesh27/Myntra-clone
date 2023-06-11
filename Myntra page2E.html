@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myntra</title>
+    <title>Beauty Products page</title>
     <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
 </head>
 <style>
@@ -58,7 +58,10 @@
         font-weight: 700;
         position: relative;
     }
-
+    #navi div a{
+    text-decoration: none;
+    color:black;
+}
     .text {
         position: absolute;
         top: 28px;
@@ -200,15 +203,19 @@
     }
 
     .top2 p {
-        font-size: 16px;
         font-weight: bold;
-        width: 26%;
+        width: 11%;
         padding-left: 27px;
         box-sizing: border-box;
     }
-
+    .clear{
+    font-size: 14px;
+    color:#ff3f6c;
+    text-transform: uppercase;
+    visibility: hidden;
+    }
     .top2 .drop {
-        width: 74%;
+        width: 85%;
         display: flex;
     }
 
@@ -258,6 +265,10 @@
         padding: 15px 0 15px 20px;
          border-bottom: 1px solid #edebef;
     }
+    #leftSection div:nth-child(6){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
     #leftSection .more{
         font-size: 15px;
     margin: 6px 0 15px 35px;
@@ -266,7 +277,6 @@
 
     #leftSection div h4 {
         margin-bottom: 10px;
-        margin-left: 9px;
         font-size: 14px;
     }
     #leftSection div input{
@@ -296,12 +306,12 @@
         border-radius:50%;
     }
     #rightSection .main{
-        width: 18%;
-        height: 360px;
+        width: 17%;
+        height: 358px;
         position: relative;
+        margin-bottom: 30px;
         /* border: 1px solid blue; */
         z-index: 1;
-        margin-bottom: 30px;
     }
 
     #rightSection .main:hover {
@@ -310,7 +320,7 @@
 
     #rightSection .main img {
         width: 100%;
-        height: 75%;
+        height: 78%;
         /* margin: 26px 12px; */
     }
 
@@ -401,7 +411,7 @@
     .container button {
         display: block;
         margin: auto;
-        margin-top: 20px;
+        margin-top: 30px;
         margin-bottom: 10px;
         width: 80%;
         height: 30px;
@@ -498,14 +508,17 @@
 
         <div id="navbar">
             <div id="icon">
-                <img src="./myntraLOGO.webp" alt="">
+                <a href="index.html">
+                    <img src="./myntraLOGO.webp" alt="">
+                </a>
+                
             </div>
             <div id="navi">
-                <div>Men</div>
-                <div>Women</div>
-                <div>Kids</div>
-                <div>Home & Living</div>
-                <div>Beauty</div>
+                <div><a href="Myntra page2A.html">Men</a></div>
+                <div><a href="Myntra page2B.html">Women</a></div>
+                <div><a href="Myntra page2C.html">Kids</a></div>
+                <div><a href="Myntra page2D.html">Home & Living</a></div>
+                <div><a href="Myntra page2E.html">Beauty</a></div>
                 <div>Studio</div>
                 <span class="text">NEW</span>
 
@@ -535,14 +548,23 @@
 
         </div>
         <div class="top1">
-            <p>Home/Clothing/<b>Men T-Shirts</b> </p>
-            <p><b>Men T-Shirts</b>-105493 items </p>
+            <p>Home /Personal Care /<b> Lipstick</b> </p>
+            <p><b>Lipstick</b>-18855 items </p>
         </div>
         <div class="top2">
             <p>FILTERS</p>
+            <p class="clear">Clear All</p>
             <div class="drop">
                 <div>
                     <span>Bundles</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Colour Family</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Colour Shade name</span>
                     <select></select>
                 </div>
                 <div>
@@ -550,9 +572,18 @@
                     <select></select>
                 </div>
                 <div>
-                    <span>Size</span>
+                    <span>Features</span>
                     <select></select>
                 </div>
+                <div>
+                    <span>Finish</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Formulation</span>
+                    <select></select>
+                </div>
+                
 
             </div>
             <div class="drop-option">
@@ -568,44 +599,34 @@
         </div>
         <div id="body">
             <div id="leftSection">
-
-                <div>
-                    <h4>CATEGORIES</h4>
-                    <input type="checkbox" />
-                    <label>Tshirt<span>&nbsp;(102631)</span></label><br />
-                    <input type="checkbox" />
-                    <label>Lounge T-shirts<span>&nbsp;(1221)</span></label><br />
-                    <!-- <input type="checkbox" />
-                    <label>Jeans</label><br />
-                    <input type="checkbox" />
-                    <label>Kurta</label><br />
-                    <input type="checkbox" />
-                    <label>Trousers</label><br />
-                    <input type="checkbox" />
-                    <label>Tshirt</label><br />
-                    <input type="checkbox" />
-                    <label>Kurtas</label> -->
-                </div>
+             <div>
+                <input type="radio" />
+                <label><b>Men</b></label><br />
+                <input type="radio" />
+                <label><b>Women</b></label><br />
+     
+             </div>
                 <div>
                     <h4>BRAND</h4>
                     <input type="checkbox" />
-                    <label>Roadster<span>&nbsp;(3312)</span></label><br />
+                    <label>ME-ON <span>&nbsp;(15631)</span></label><br />
+                    
                     <input type="checkbox" />
-                    <label>Allen solly<span>&nbsp;(1012)</span></label><br />
+                    <label>Lakme<span>&nbsp;(1567)</span></label><br />
+                    
                     <input type="checkbox" />
-                    <label>Nike<span>&nbsp;(2512)</span></label><br />
+                    <label>Maybelline<span>&nbsp;(15861)</span></label><br />
                     <input type="checkbox" />
-                    <label>Puma<span>&nbsp;(3201)</span></label><br />
+                    <label>Colours Queen <span>&nbsp;(14569)</span></label><br />
                     <input type="checkbox" />
-                    <label>Adidas<span>&nbsp;(3254)</span></label><br />
+                    <label>PERPA<span>&nbsp;(11831)</span></label><br />
                     <input type="checkbox" />
-                    <label>Benetton<span>&nbsp;(5631)</span></label><br />
+                    <label>Krayons<span>&nbsp;(7536)</span></label><br />
                     <input type="checkbox" />
-                    <label>U.S Polo<span>&nbsp;(3242)</span></label><br/>
-                    <input type="checkbox" />
-                    <label>Tommy Hilfighter<span>&nbsp;(3214)</span></label>
-                    <p class="more">+630 more</p>
+                    <label>MISS ROSE<span>&nbsp;(2255)</span></label>
+                    <p class="more">+133 more</p>
                 </div>
+            
                 
                 <div>
                     <h4>COLOUR</h4>
@@ -613,36 +634,34 @@
                     <span class="colour"></span>
                     <label>Blue<span>&nbsp;(3312)</span></label><br />
                     <input type="checkbox" />
-                    <span class="colour" style="background-color:black"></span>
-                    <label>Black<span>&nbsp;(3312)</span></label><br />
+                    <span class="colour" style="background-color:green"></span>
+                    <label>Green<span>&nbsp;(3312)</span></label><br />
                     <input type="checkbox" />
                     <span class="colour" style="background-color:red"></span>
                     <label>Red<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:pink"></span>
+                    <label>Pink<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:brown"></span>
+                    <label>Brown<span>&nbsp;(3312)</span></label><br />
                     <input type="checkbox" />
                     <span class="colour" style="background-color:maroon"></span>
                     <label>Maroon<span>&nbsp;(3312)</span></label><br />
                     <input type="checkbox" />
                     <span class="colour" style="background-color:purple"></span>
-                    <label>Purple<span>&nbsp;(3312)</span></label><br />
-                    <input type="checkbox" />
-                    <span class="colour" style="background-color:orange"></span>
-                    <label>Orange<span>&nbsp;(3312)</span></label><br />
-                    <input type="checkbox" />
-                    <span class="colour" style="background-color:greenyellow"></span>
-                    <label>green<span>&nbsp;(3312)</span></label>
-                    <p class="more">+39 more</p>
+                    <label>Purple<span>&nbsp;(3312)</span></label>
+                    <p class="more">+38 more</p>
                 </div>
 
                 <div>
                 <h4>PRICE</h4>
                 <input type="checkbox"/>
-                <label>Rs. 124 to Rs. 9093<span>&nbsp;(103570)</span></label><br />
+                <label>Rs. 490 to Rs. 9269<span>&nbsp;(249783)</span></label><br />
                 <input type="checkbox"/>
-                <label>Rs. 9093 to Rs. 18062<span>&nbsp;(496)</span></label><br />
+                <label>Rs. 9269 to Rs. 15680<span>&nbsp;(33)</span></label><br />
                 <input type="checkbox"/>
-                <label>Rs. 18062 to Rs. 27031<span>&nbsp;(23)</span></label><br />
-                <input type="checkbox"/>
-                <label>Rs. 27031 to Rs. 36000<span>&nbsp;(1)</span></label><br />
+                <label>Rs. 15680 to Rs. 58999<span>&nbsp;(7)</span></label>
                 </div>
                 <div>
                 <h4>DISCOUNT RANGE</h4>
@@ -668,22 +687,20 @@
             </div>
             <div id="rightSection">
                 <div class="main">
-
-                    <img
-                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
-                    <h4>Roadster</h4>
-                    <p>Men Clothing</p>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19477632/2022/10/21/0522fbe1-0c21-4b7a-954d-89234ad39b871666333272321-ETUDE-Fixing-Tint-Hydrating-Matte-Finish-Lipstick---Midnight-1.jpg" alt="">
+                    <h4>ETUDE</h4>
+                    <p>Fixing Tint Lipstick</p>
                     <span class="box">
-                        <b>4</b>
+                        <b>3.9</b>
                         <img src="./star.png" alt="">
-                        <b>| 19.3k</b>
+                        <b>| 141</b>
                     </span>
                     <span class="secText">
-                        <strong>&#8377;340 </strong>
+                        <strong>&#8377;714 </strong>
                         <span>MRP
-                            <del>&#8377;1099</del>
+                            <del>&#8377;6499</del>
                         </span>
-                        <b>(69% OFF)</b>
+                        <b>(89% OFF)</b>
                     </span>
 
 
@@ -692,176 +709,33 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: M</p>
+                        <p>Sizes: 3-4Y</p>
                         <span class="secText">
-                            <strong>&#8377;340 </strong>
+                            <strong>&#8377;714 </strong>
                             <span>MRP
-                                <del>&#8377;1099</del>
+                                <del>&#8377;6499</del>
                             </span>
-                            <b>(69% OFF)</b>
+                            <b>(89% OFF)</b>
                         </span>
                     </div>
                 </div>
                  
                 <div class="main">
                     <a href="Myntra page1.html">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg"
-                        alt="">
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13105598/2021/1/25/31c4c5f6-8540-46a1-952e-bf2094943cb71611572545003-Lakme-Women-Lipstick-361611572544138-1.jpg" alt="">
                 </a>
-                    <h4>Huetrap</h4>
-                    <p>Typography print T-shirt</p>
+                    <h4>Lakme</h4>
+                    <p>Primer matte Lipstick</p>
 
                     <span class="box">
-                        <b>3</b>
+                        <b>4.3</b>
                         <img src="./star.png" alt="">
-                        <b>| 10.3k</b>
+                        <b>| 584</b>
                     </span>
                     <span class="secText">
-                        <strong>&#8377;649 </strong>
+                        <strong>&#8377;2000 </strong>
                         <span>MRP
-                            <del>&#8377;1850</del>
-                        </span>
-                        <b>(77% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M,XL</p>
-                        <span class="secText">
-                            <strong>&#8377;649 </strong>
-                            <span>MRP
-                                <del>&#8377;1850</del>
-                            </span>
-                            <b>(77% OFF)</b>
-                        </span>
-                    </div>
-                </div>
-            
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21936198/2023/2/23/c5bd261e-b2b9-4996-8736-7fd5d909dc5b1677135088695-Louis-Philippe-Sport-Men-Tshirts-5851677135088136-1.jpg"
-                        alt="">
-                    <h4>Louis Philippe</h4>
-                    <p>Sports Men T-Shirt</p>
-
-                    <span class="box">
-                        <b>4.2</b>
-                        <img src="./star.png" alt="">
-                        <b>| 17.6k</b>
-                    </span>
-                    <p class="newSeason">NEW SEASON</p>
-                    <span class="secText">
-                        <strong>&#8377;589 </strong>
-                        <span>MRP
-                            <del>&#8377;1514</del>
-                        </span>
-                        <b>(49% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;589 </strong>
-                            <span>MRP
-                                <del>&#8377;1514</del>
-                            </span>
-                            <b>(49% OFF)</b>
-                        </span>
-                    </div>
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/488007ef-c65e-4a2f-a92b-65b6846894861559989274078-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg"
-                        alt="">
-                    <h4>HRX by Hrithik Roshan</h4>
-                    <p>Men Yellow Printed T-Shirt</p>
-
-                    <span class="box">
-                        <b>5</b>
-                        <img src="./star.png" alt="">
-                        <b>| 10.3k</b>
-                    </span>
-                    <span class="secText">
-                        <strong>&#8377;749 </strong>
-                        <span>MRP
-                            <del>&#8377;1299</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: S,M</p>
-                        <span class="secText">
-                            <strong>&#8377;749 </strong>
-                            <span>MRP
-                                <del>&#8377;1299</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22879942/2023/4/25/92aba434-6d11-4456-aabf-3715df3664b31682367889514USPoloAssnMenBlackPoloCollarAppliqueT-shirt1.jpg"
-                        alt="">
-                    <h4>Polo Assn Men T-Shirt</h4>
-                    <p>Polo collar T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        <b>| 19.3k</b>
-                    </span>
-                    <span class="secText">
-                        <strong>&#8377;550 </strong>
-                        <span>MRP
-                            <del>&#8377;998</del>
-                        </span>
-                        <b>(45% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M.XL</p>
-                        <span class="secText">
-                            <strong>&#8377;550 </strong>
-                            <span>MRP
-                                <del>&#8377;998</del>
-                            </span>
-                            <b>(45% OFF)</b>
-                        </span>
-                    </div>
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18176640/2023/5/18/efbd5632-a203-495b-9ab6-ebea9ef63b2b1684410440255-Tommy-Hilfiger-Men-Tshirts-6151684410439892-1.jpg"
-                        alt="">
-                    <h4>Tommy-Hilfiger</h4>
-                    <p>Mens T-Shirt</p>
-
-                    <span class="box">
-                        <b>4.5</b>
-                        <img src="./star.png" alt="">
-                        <b>| 19.3k</b>
-                    </span>
-                    <span class="secText">
-                        <strong>&#8377;775 </strong>
-                        <span>MRP
-                            <del>&#8377;1254</del>
+                            <del>&#8377;2569</del>
                         </span>
                         <b>(65% OFF)</b>
                     </span>
@@ -872,69 +746,34 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: M,XL,XXL</p>
+                        <p>Sizes: 3-4Y</p>
                         <span class="secText">
-                            <strong>&#8377;775 </strong>
+                            <strong>&#8377;630 </strong>
                             <span>MRP
-                                <del>&#8377;1254</del>
+                                <del>&#8377;1000</del>
                             </span>
                             <b>(65% OFF)</b>
                         </span>
                     </div>
                 </div>
+            
                 <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1996770/2018/2/8/11518088823846-Roadster-Men-Rust-Solid-Henley-Neck-T-shirt-7631518088823602-1.jpg"
-                        alt="">
-                    <h4>Roadster</h4>
-                    <p>Henly Neck T-Shirt</p>
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17155838/2023/3/9/b64ea8e3-d1d1-4864-bda9-200fa85e5d5a1678355072193-RENEE-Madness-pH-Stick-3gm--Black-Lipstick-Pink-Pay-Off-4091-1.jpg" alt="">
+                    <h4>Renee</h4>
+                    <p>Madness pH Lipstick</p>
 
                     <span class="box">
                         <b>4.2</b>
                         <img src="./star.png" alt="">
-                        <b>| 13.7k</b>
-                    </span>
-                    <span class="secText">
-                        <strong>&#8377;899 </strong>
-                        <span>MRP
-                            <del>&#8377;1300</del>
-                        </span>
-                        <b>(29% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;899 </strong>
-                            <span>MRP
-                                <del>&#8377;1300</del>
-                            </span>
-                            <b>(29% OFF)</b>
-                        </span>
-                    </div>
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21474638/2023/1/24/3a74185f-276d-48df-8e73-4270bdabbfe31674562975045-Louis-Philippe-Sport-Men-Tshirts-4131674562974519-1.jpg"
-                        alt="">
-                    <h4>Louis-Philippe</h4>
-                    <p>Men Clothing</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        <b>| 12.2k</b>
+                        <b>| 1.1k</b>
                     </span>
                     <p class="newSeason">NEW SEASON</p>
                     <span class="secText">
-                        <strong>&#8377;1023 </strong>
+                        <strong>&#8377;2896 </strong>
                         <span>MRP
-                            <del>&#8377;1450</del>
+                            <del>&#8377;3596</del>
                         </span>
-                        <b>(26% OFF)</b>
+                        <b>(17% OFF)</b>
                     </span>
 
 
@@ -943,21 +782,191 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: M</p>
+                        <p>Sizes: 2-3Y</p>
                         <span class="secText">
-                            <strong>&#8377;1023 </strong>
+                            <strong>&#8377;2896 </strong>
                             <span>MRP
-                                <del>&#8377;1450</del>
+                                <del>&#8377;3596</del>
                             </span>
-                            <b>(26% OFF)</b>
+                            <b>(17% OFF)</b>
                         </span>
                     </div>
                 </div>
                 <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12377258/2020/9/11/ce1b7bcb-a65a-4eb0-a317-42ac02718f1e1599798741705UrbanoFashionPrintedMenRoundNeckDarkGreenT-Shirt1.jpg"
-                        alt="">
-                    <h4>Urban Fashion</h4>
-                    <p>Mens T-shirt</p>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13105572/2021/1/25/9547adc2-db67-42b6-81d5-fbd835046a5d1611572248485-Lakme-Women-Lipstick-2481611572247698-1.jpg" alt="">
+                    <h4>Lakme</h4>
+                    <p>Primer matte Lipstick</p>
+
+                    <span class="box">
+                        <b>3.7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 1.2k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1700</del>
+                        </span>
+                        <b>(80% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 2-3Y</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1700</del>
+                            </span>
+                            <b>(80% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22695636/2023/4/7/0c5edd28-d562-4861-9411-7def6d26a1f61680891356316Lipstick1.jpg" alt="">
+                    <h4>FORFOR</h4>
+                    <p>Stay matte Lipstick</p>
+
+                    <span class="box">
+                        <b>4.4</b>
+                        <img src="./star.png" alt="">
+                        <b>| 286</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;399 </strong>
+                        <span>MRP
+                            <del>&#8377;1332</del>
+                        </span>
+                        <b>(70% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 3-4Y</p>
+                        <span class="secText">
+                            <strong>&#8377;399 </strong>
+                            <span>MRP
+                                <del>&#8377;1332</del>
+                            </span>
+                            <b>(70% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/8051031/2023/3/23/fcc6d59b-b328-4bcd-8efb-260b8a5d9a5f1679565014444-Maybelline-New-York-Super-Stay-Matte-Ink-Liquid-Lipstick-5-m-1.jpg" alt="">
+                    <h4>Maybelline</h4>
+                    <p>Super Stay Lipstick</p>
+
+                    <span class="box">
+                        <b>4.2</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.3k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;2807 </strong>
+                        <span>MRP
+                            <del>&#8377;3119</del>
+                        </span>
+                        <b>(10% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;2807 </strong>
+                            <span>MRP
+                                <del>&#8377;3119</del>
+                            </span>
+                            <b>(10% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20474268/2022/10/27/137f583f-9055-48fd-a6d5-9c34a4cbaedc1666847266322-ETUDE-Dear-Darling-Water-Gel-Lip--Cheek-Tint-Lipstick-9-g----1.jpg" alt="">
+                    <h4>ETUDE</h4>
+                    <p>Dear Dark Lipstick</p>
+
+                    <span class="box">
+                        <b>4.7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 13</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;4160 </strong>
+                        <span>MRP
+                            <del>&#8377;5200</del>
+                        </span>
+                        <b>(20% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;4160 </strong>
+                            <span>MRP
+                                <del>&#8377;5200</del>
+                            </span>
+                            <b>(20% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13105586/2021/1/25/8700a57f-588d-4c32-ab61-2877f3c7b40d1611572324107-Lakme-Women-Lipstick-7651611572323405-1.jpg" alt="">
+                    <h4>Lakme</h4>
+                    <p>Primer matte Lipstick</p>
+
+                    <span class="box">
+                        <b>4.3</b>
+                        <img src="./star.png" alt="">
+                        <b>| 749</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;909 </strong>
+                        <span>MRP
+                            <del>&#8377;3499</del>
+                        </span>
+                        <b>(73% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;909 </strong>
+                            <span>MRP
+                                <del>&#8377;3499</del>
+                            </span>
+                            <b>(73% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14269676/2023/3/9/4e386b31-72e1-47c7-99ce-3d8db0401d601678354971585-RENEE-Fab-5-5in1-Lipstick-75-g-1581678354971310-1.jpg" alt="">
+                    <h4>Renee</h4>
+                    <p>Fab 5 in 1 Lipstick</p>
 
                     <span class="box">
                         <b>7</b>
@@ -965,11 +974,11 @@
                         <b>| 10.9k</b>
                     </span>
                     <span class="secText">
-                        <strong>&#8377;389 </strong>
+                        <strong>&#8377;1092 </strong>
                         <span>MRP
-                            <del>&#8377;749</del>
+                            <del>&#8377;8400</del>
                         </span>
-                        <b>(56% OFF)</b>
+                        <b>(87% OFF)</b>
                     </span>
 
 
@@ -978,33 +987,33 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: M</p>
+                        <p>Sizes: Onesize</p>
                         <span class="secText">
-                            <strong>&#8377;389 </strong>
+                            <strong>&#8377;1092 </strong>
                             <span>MRP
-                                <del>&#8377;749</del>
+                                <del>&#8377;8400</del>
                             </span>
-                            <b>(56% OFF)</b>
+                            <b>(87% OFF)</b>
                         </span>
                     </div>
                 </div>
                 <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22763126/2023/5/5/d7f27349-a195-4d1d-932c-73f42ff095c41683288884828-Peter-England-Casuals-Men-Striped-Slim-Fit-T-shirt-512168328-1.jpg" alt="">
-                    <h4>Peter-England-Casuals</h4>
-                    <p>Men-Striped-Slim-Fit-T-shirt</p>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22695658/2023/4/7/6f959e5e-ba5f-4848-a0dd-ae29d72b38fe1680891595661Lipstick1.jpg" alt="">
+                    <h4>FORFOR</h4>
+                    <p>Stay matte Lipstick</p>
 
                     <span class="box">
-                        <b>4.5</b>
+                        <b>2.1</b>
                         <img src="./star.png" alt="">
-                        <b>| 17.3k</b>
+                        <b>| 12</b>
                     </span>
                     <p class="newSeason">NEW SEASON</p>
                     <span class="secText">
-                        <strong>&#8377;699 </strong>
+                        <strong>&#8377;1220 </strong>
                         <span>MRP
-                            <del>&#8377;999</del>
+                            <del>&#8377;3699</del>
                         </span>
-                        <b>(30% OFF)</b>
+                        <b>(67% OFF)</b>
                     </span>
 
 
@@ -1013,22 +1022,21 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: S,M</p>
+                        <p>Sizes: Onesize</p>
                         <span class="secText">
-                            <strong>&#8377;699 </strong>
+                            <strong>&#8377;1220 </strong>
                             <span>MRP
-                                <del>&#8377;999</del>
+                                <del>&#8377;3699</del>
                             </span>
-                            <b>(30% OFF)</b>
+                            <b>(67% OFF)</b>
                         </span>
                     </div>
 
                 </div>
                 <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16878774/2022/2/4/98f122ad-aeb6-40f3-8f18-96751883c90d1643953479039-Louis-Philippe-Jeans-Men-Tshirts-1851643953478551-1.jpg"
-                        alt="">
-                    <h4>Louis Philippe T-Shirt</h4>
-                    <p>Mens Jeans T-Shirt</p>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13105580/2022/2/11/90abe932-a79c-4845-a285-caa19a1d91541644578244486Lakme9to5PrimerMatteLipstick-GarnetPunchMM21.jpg" alt="">
+                    <h4>Lakme</h4>
+                    <p>Primer matte Lipstick</p>
 
                     <span class="box">
                         <b>4</b>
@@ -1050,7 +1058,7 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: M</p>
+                        <p>Sizes: Onesize</p>
                         <span class="secText">
                             <strong>&#8377;340 </strong>
                             <span>MRP
@@ -1062,9 +1070,9 @@
 
                 </div>
                 <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20017870/2022/9/16/2f77bcde-0773-4d17-a62d-3d99f6c857511663311585777TheSouledStoreMenGreyPrintedRawEdgeLooseT-shirt1.jpg" alt="">
-                    <h4>The Soulted Store</h4>
-                    <p>Mens Oversized T-Shirt</p>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19477610/2022/10/21/8a73913b-682e-44f6-837b-c1e0bbc0308b1666333236949-ETUDE-Hydrating-Fixing-Tint-Lipstick-4-g---Analog-Rose-01-34-1.jpg" alt="">
+                    <h4>ETUDE</h4>
+                    <p>Fixed Tint Lipstick</p>
 
                     <span class="box">
                         <b>4.5</b>
@@ -1086,7 +1094,7 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: M</p>
+                        <p>Sizes: Onesize</p>
                         <span class="secText">
                             <strong>&#8377;1325 </strong>
                             <span>MRP
@@ -1098,9 +1106,9 @@
 
                 </div>
                 <div class="main">
-                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19182778/2022/11/30/8cb06057-fb75-47e4-bb9b-9045b67065171669788609173-US-Polo-Assn-Men-Tshirts-4581669788608713-1.jpg" alt="">
-                    <h4>US Polo Assn.</h4>
-                    <p>Mens T-Shirt</p>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/8051027/2023/3/23/2173e128-068b-4be6-b9a2-908340c1efe31679564990265-Maybelline-New-York-Super-Stay-Matte-Ink-Liquid-Lipstick-5-m-1.jpg" alt="">
+                    <h4>Maybelline</h4>
+                    <p>Super stay matte Lipstick</p>
 
                     <span class="box">
                         <b>4</b>
@@ -1122,7 +1130,7 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: M</p>
+                        <p>Sizes: Onsize</p>
                         <span class="secText">
                             <strong>&#8377;340 </strong>
                             <span>MRP
@@ -1134,9 +1142,9 @@
 
                 </div>
                 <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12504566/2021/2/15/061da36d-d662-4fe6-9b1d-5b7377e785f11613373061587-Roadster-Men-Tshirts-3551613373060033-1.jpg" alt="">
-                    <h4>Roadster</h4>
-                    <p>Mens regular T-Shirt</p>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12528972/2022/2/11/f8cb9bc1-f18c-4681-93af-5d47b31d15e91644578214523MACMiniMatteLipstick-RubyWoo18g1.jpg" alt="">
+                    <h4>M.A.C</h4>
+                    <p>Mini matte Lipstick</p>
 
                     <span class="box">
                         <b>4</b>
@@ -1158,7 +1166,7 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: M</p>
+                        <p>Sizes: Onesize</p>
                         <span class="secText">
                             <strong>&#8377;340 </strong>
                             <span>MRP
@@ -1170,9 +1178,9 @@
 
                 </div>
                 <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21086738/2022/12/14/12e313ff-4513-4289-b061-99aa4db317ea1670993138745-Calvin-Klein-Jeans-Men-Tshirts-6991670993138251-1.jpg" alt="">
-                    <h4>Calvin Klein Jeans</h4>
-                    <p>Mens Jeans T-Shirt</p>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13105568/2021/1/25/c90dbf0c-eefa-43f7-99d2-7a40620973d91611572232172-Lakme-Women-Lipstick-4301611572231017-1.jpg" alt="">
+                    <h4>Lakme</h4>
+                    <p>Primer matte lipstick</p>
 
                     <span class="box">
                         <b>4</b>
@@ -1194,7 +1202,7 @@
                             WISHLIST
                             <i class="fa-regular fa-heart"></i>
                         </button>
-                        <p>Sizes: M</p>
+                        <p>Sizes: Onesize</p>
                         <span class="secText">
                             <strong>&#8377;340 </strong>
                             <span>MRP
@@ -1205,366 +1213,8 @@
                     </div>
 
                 </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/8841173/2019/3/19/e73991be-bd0c-4dd3-8390-bb9c460d02311552986669941-Roadster-Men-Tshirts-2621552986668325-1.jpg" alt="">
-                    <h4>Roadster</h4>
-                    <p>Allowed Printed T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                    
-                    <span class="secText">
-                        <strong>&#8377;340 </strong>
-                        <span>MRP
-                            <del>&#8377;1099</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="main">
-                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2314372/2018/6/19/29e8ddfd-6f5f-43fd-8b71-dfa8ac6cef681529385860869-HRX-by-Hrithik-Roshan-Men-Charcoal-Grey-Slim-Advanced-Rapid--1.jpg" alt="">
-                    <h4>HRX by Hritik Roshan</h4>
-                    <p>Mens T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                   
-                    <span class="secText">
-                        <strong>&#8377;340 </strong>
-                        <span>MRP
-                            <del>&#8377;1099</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17605700/2023/2/17/90bf4f54-5da2-44ab-aadb-97de558ce0041676633122557-Difference-of-Opinion-Men-Blue-Conversational-Printed-Pure-C-1.jpg" alt="">
-                    <h4>Diffrence of Opinion</h4>
-                    <p>Cotton Oversized T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                    <p class="newSeason">NEW SEASON</p>
-                    <span class="secText">
-                        <strong>&#8377;340 </strong>
-                        <span>MRP
-                            <del>&#8377;1099</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22109364/2023/4/3/14d69c78-aa04-4b8d-8fbc-6cce356356ad1680507539642-ESS-Logo--Regular-Fit-Mens-T-Shirt-8681680507539305-1.jpg" alt="">
-                    <h4>Puma</h4>
-                    <p>Mens Slim fit T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                    <p class="newSeason">NEW SEASON</p>
-                    <span class="secText">
-                        <strong>&#8377;987</strong>
-                        <span>MRP
-                            <del>&#8377;1365</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19525576/2022/8/26/f8a1a635-9f80-4072-b413-c51e9480bb961661502396863-HereNow-Mens-Teal-Printed-Round-Neck-Pure-Cotton-T-Shirts-69-1.jpg" alt="">
-                    <h4>HERE&NOW</h4>
-                    <p>Mens T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                    
-                    <span class="secText">
-                        <strong>&#8377;599 </strong>
-                        <span>MRP
-                            <del>&#8377;745</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13421560/2021/1/20/7a41f62b-c74c-4147-ba17-ed7c166bb8d01611146874086-Nike-Pro-Dri-FIT-Mens-Short-Sleeve-Top-251611146872984-1.jpg" alt="">
-                    <h4>Nike</h4>
-                    <p>Round Neck T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                    
-                    <span class="secText">
-                        <strong>&#8377;1142 </strong>
-                        <span>MRP
-                            <del>&#8377;1874</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17125896/2022/2/11/edd2b407-1d73-46f9-9843-86cea050865f1644519785136SlimFitPatternedpoloshirt1.jpg" alt="">
-                    <h4>H&M</h4>
-                    <p>Slim fit pattern polo T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                    <p class="newSeason">NEW SEASON</p>
-                    <span class="secText">
-                        <strong>&#8377;887 </strong>
-                        <span>MRP
-                            <del>&#8377;1099</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10976182/2019/11/21/255ee3ca-200a-45cc-9f2e-7b2d5f55a1a71574331462513-Allen-Solly-Casual-Polo-Tshirt-5781574331461206-1.jpg" alt="">
-                    <h4>Allen Solly</h4>
-                    <p>Casual Polo T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                   
-                    <span class="secText">
-                        <strong>&#8377;340 </strong>
-                        <span>MRP
-                            <del>&#8377;1099</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12940736/2021/11/12/751088bd-4b6f-4ce9-acb0-83ed3b2e1ee81636720869144-United-Colors-of-Benetton-Men-Navy-Blue-Solid-Polo-Collar-T--1.jpg" alt="">
-                    <h4>United Colors of Benetton</h4>
-                    <p>Solid Polo Collar T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                    
-                    <span class="secText">
-                        <strong>&#8377;780 </strong>
-                        <span>MRP
-                            <del>&#8377;1099</del>
-                        </span>
-                        <b>(69% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="main">
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22109382/2023/4/3/a1a78571-699c-4940-b534-1005e8133c591680507571629-ESS-Logo--Regular-Fit-Mens-T-Shirt-1871680507571187-1.jpg" alt="">
-                    <h4>Puma</h4>
-                    <p>Men Pure Cottom T-Shirt</p>
-
-                    <span class="box">
-                        <b>4</b>
-                        <img src="./star.png" alt="">
-                        | 19.3K
-                    </span>
-                    <p class="newSeason">NEW SEASON</p>
-                    <span class="secText">
-                        <strong>&#8377;549 </strong>
-                        <span>MRP
-                            <del>&#8377;1099</del>
-                        </span>
-                        <b>(50% OFF)</b>
-                    </span>
-
-
-                    <div class="container">
-                        <button>
-                            WISHLIST
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                        <p>Sizes: M</p>
-                        <span class="secText">
-                            <strong>&#8377;340 </strong>
-                            <span>MRP
-                                <del>&#8377;1099</del>
-                            </span>
-                            <b>(69% OFF)</b>
-                        </span>
-                    </div>
-
-                </div>
+                
+                
                 
                 <div class="downline"></div>
                 <div class="bottomFlex">

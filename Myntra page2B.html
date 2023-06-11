@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womens Products page</title>
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #main {
+        width: 100%;
+        /* height: 1200px; */
+        /* border: 2px solid black; */
+    }
+
+    #navbar {
+        width: 100%;
+        height: 80px;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+        z-index: 10;
+    }
+
+    #icon {
+        width: 5%;
+        /* border:1px solid blue; */
+        box-sizing: border-box;
+    }
+
+    #icon img {
+        width: 105px;
+        height: 60px;
+        margin-top: 15px;
+    }
+
+    #navi {
+        width: 35%;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+        position: relative;
+    }
+    #navi div a{
+    text-decoration: none;
+    color:black;
+}
+    .text {
+        position: absolute;
+        top: 28px;
+        right: 3px;
+        font-size: 10px;
+        font-weight: 645;
+        color: #ff3f6c;
+    }
+
+    #search {
+        width: 30%;
+        display: flex;
+        align-items: center;
+
+        position: relative;
+    }
+
+    #search input {
+        height: 45%;
+        width: 100%;
+        padding-left: 43px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: rgb(243, 239, 239);
+
+    }
+
+    #search i {
+        margin-right: 10px;
+        position: absolute;
+        top: 33px;
+        left: 12px;
+    }
+
+    #profile {
+        width: 15%;
+        height: 80px;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+
+    }
+
+    #pp {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #pp i {
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+
+    #wishlist {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #wishlist i {
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+
+
+
+    #bag {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #bag i {
+        margin-top: 20px;
+        margin-left: 25px;
+        margin-right: 20px;
+    }
+
+    /* body CSS */
+    #body {
+        width: 100%;
+        /* height: 800px; */
+        border: 1px solid #edebef;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+
+    #body>div:nth-child(1) {
+        width: 16%;
+        /* border: 1px solid red; */
+
+    }
+
+    #body>div:nth-child(1) h4 {
+        margin-bottom: 10px;
+
+    }
+
+    #rightSection {
+        width: 84%;
+        border-left: 1px solid #edebef;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        /* padding-top: 25px;
+        padding-left: 15px; */
+        padding-top: 24px;
+    padding-left: 15px;
+    padding-right: 20px;
+    }
+
+    .top1 {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        margin-left: 20px;
+    }
+
+    .top1 p:nth-child(1) {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .top1 p:nth-child(2) {
+        font-size: 16px;
+    }
+
+    .top2 {
+        display: flex;
+    }
+
+    .top2 p {
+        font-weight: bold;
+        width: 11%;
+        padding-left: 27px;
+        box-sizing: border-box;
+    }
+    .clear{
+    font-size: 14px;
+    color:#ff3f6c;
+    text-transform: uppercase;
+    visibility: hidden;
+    }
+    .top2 .drop {
+        width: 74%;
+        display: flex;
+    }
+
+    .top2 .drop div {
+        font-size: 14px;
+        margin-right: 20px;
+    }
+
+    .top2 .drop div select {
+        border: none;
+        outline: none;
+
+    }
+
+    .top2 .drop-option {
+        width: 30%;
+    }
+
+    .top2 .drop-option select {
+        margin: auto;
+        display: block;
+        width: 60%;
+        height: 35px;
+    }
+
+    #leftSection {
+        margin-top: 20px;
+    }
+
+    #leftSection div:nth-child(1) {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+    }
+
+    #leftSection div:nth-child(2){
+        margin-bottom: 15px;
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(4){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(5){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(6){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection .more{
+        font-size: 15px;
+    margin: 6px 0 15px 35px;
+    color: #ff3f6c;
+    }
+
+    #leftSection div h4 {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    #leftSection div input{
+        width:15px;
+        height:15px;
+        margin-right: 7px;
+    }
+    #leftSection div input,
+    label {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    #leftSection div label span{
+        font-size: 11px;
+        color:rgb(137, 136, 136)
+    }
+    #leftSection>div:nth-child(3){
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+
+    }
+    #leftSection .colour{
+        display: inline-block;
+        width:15px;
+        height:15px;
+        background-color: blue;
+        border-radius:50%;
+    }
+    #rightSection .main{
+        width: 17%;
+        height: 358px;
+        position: relative;
+        /* border: 1px solid blue; */
+        z-index: 1;
+        margin-bottom: 30px;
+    }
+
+    #rightSection .main:hover {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    #rightSection .main img {
+        width: 100%;
+        height: 78%;
+        /* margin: 26px 12px; */
+    }
+
+    #rightSection .box {
+        border: 1px solid #eaeaec;
+        background-color: hsla(0, 0%, 100%, .8);
+        color: black;
+        padding: 2px;
+        font-size: 12px;
+        position: absolute;
+        top: 240px;
+        left: 10px;
+        opacity: 0.8;
+        border-radius: 2px;
+    }
+
+    #rightSection .box>img {
+        height: 10px;
+        width: 12px;
+    }
+
+    #rightSection .secText {
+        margin-left: 10px;
+    }
+
+    #rightSection .secText strong {
+        font-size: 14px;
+    }
+
+    #rightSection .secText span {
+        font-size: 12px;
+        color: grey
+    }
+
+    #rightSection .secText b {
+        font-size: 12px;
+        color: rgb(255, 204, 110)
+    }
+
+    #rightSection .newSeason {
+        background: rgba(255, 63, 108, .8);
+        position: absolute;
+        top: 16px;
+        left: 0;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 0 4px;
+        line-height: 16px;
+    }
+
+    #rightSection .newSeason::after {
+        content: "";
+        position: absolute;
+        border-color: rgba(255, 63, 108, .5) transparent rgba(255, 63, 108, .5) rgba(255, 63, 108, .8);
+        border-style: solid;
+        border-width: 8px;
+        left: 100%;
+        width: 0;
+        height: 0;
+        top: 0;
+    }
+
+    .container {
+        /* border:1px solid red; */
+        height: 130px;
+        /* position: absolute;
+    top: 240px; */
+        width: 100%;
+        /* z-index: 10; */
+        background-color: white;
+        display: none;
+    }
+
+    #rightSection>div:hover {
+        .container {
+            display: block;
+            position: absolute;
+            top: 230px;
+            /* border: 1px solid red; */
+        }
+
+    }
+
+
+
+
+    .container button {
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 30px;
+        background: white;
+        border: 1px solid #c7c5c5;
+        border-radius: 2px;
+    }
+    .container button:hover{
+        border: 1px solid black;
+    }
+
+    .container p {
+        color: #8a8989;
+        font-size: 14px;
+        margin-left: 10px;
+        margin-top: 15.5px;
+        margin-bottom: 3px;
+    }
+
+    .container span:nth-child(3) {
+        margin-left: 10px;
+    }
+
+    #rightSection>div>h4:nth-child(2) {
+        /* margin-bottom: 2px; */
+        margin-left: 10px;
+    }
+
+    #rightSection>div>p:nth-child(3) {
+        margin-bottom: 3px;
+        font-size: 14px;
+        margin-left: 10px;
+        color: #535766;
+    }
+   #rightSection .downline{
+    width:98%;
+    height:1px;
+    background-color:#edebef ;
+   }
+   #rightSection .bottomFlex{
+    width: 100%;
+    display: flex;
+    margin: 50px 0;
+   }
+    .bottomFlex p{
+        width:33%;
+        font-size: 14px;
+       margin-top: 15px;
+    }
+    .bottomFlex .nextPage{
+        width:38%;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        
+
+    }
+    .bottomFlex .nextPage li{
+        padding: 0 10px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    .bottomFlex .nextPage li:nth-child(1){
+        background-color: black;
+        color: white;
+        height: 30px;
+        padding-top:8px;
+        
+    }
+    .bottomFlex .nextPage li:hover{
+        height: 30px;
+      border:1px solid rgb(158, 156, 156);  
+      padding-top:8px;
+    }
+    .bottomFlex .lastButton{
+        width:28%;
+        
+    }
+    .bottomFlex .lastButton button{
+        height: 45px;
+    width: 25%;
+    border: 1px solid #b9b5b5;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-left: 40px;
+    }
+    .bottomFlex .lastButton button:hover{
+    border:1px solid black;
+    }
+</style>
+
+<body>
+    <div id="main">
+
+        <div id="navbar">
+            <div id="icon">
+                <a href="index.html">
+                    <img src="./myntraLOGO.webp" alt="">
+                </a>
+                
+            </div>
+            <div id="navi">
+                <div><a href="Myntra page2A.html">Men</a></div>
+                <div><a href="Myntra page2B.html">Women</a></div>
+                <div><a href="Myntra page2C.html">Kids</a></div>
+                <div><a href="Myntra page2D.html">Home & Living</a></div>
+                <div><a href="Myntra page2E.html">Beauty</a></div>
+                <div>Studio</div>
+                <span class="text">NEW</span>
+
+            </div>
+            <div id="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                <input type="search" placeholder="Search for products,brands and more" />
+
+            </div>
+            <div id="profile">
+                <div id="pp">
+                    <i class="fa-solid fa-user "></i>
+                    <div style="margin-top: 3px;margin-left: 18px;">Profile</div>
+                </div>
+                <div id="wishlist">
+                    <i class="fa-solid fa-cart-shopping "></i>
+                    <div style="margin-top: 3px;margin-left: 20px;">Wishlist</div>
+                </div>
+                <div id="bag">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <div style="margin-top: 3px;margin-left: 20px;">Bag</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="top1">
+            <p>Home / Clothing / <b> Sarees</b> </p>
+            <p><b>Sarees</b>-123939 items </p>
+        </div>
+        <div class="top2">
+            <p>FILTERS</p>
+            <p class="clear">Clear All</p>
+            <div class="drop">
+                <div>
+                    <span>Bundles</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Country of Origin</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Size</span>
+                    <select></select>
+                </div>
+
+            </div>
+            <div class="drop-option">
+                <select>
+                    <option>Recommended</option>
+                    <option>Whats new</option>
+                    <option>Popularity</option>
+                    <option>Discounts</option>
+                    <option>Price:High-to-low</option>
+                    <option>Price:Low-to-high</option>
+                </select>
+            </div>
+        </div>
+        <div id="body">
+            <div id="leftSection">
+             <div>
+                <input type="radio" />
+                <label><b>Women</b></label><br />
+                <input type="radio" />
+                <label><b>Girls</b></label>  
+             </div>
+                <div>
+                    <h4>CATEGORIES</h4>
+                    <input type="checkbox" />
+                    <label>Sarees <span>&nbsp;(15631)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Sarees blouse<span>&nbsp;(1151)</span></label><br />
+                    <!-- <input type="checkbox" />
+                    <label>Jeans</label><br />
+                    <input type="checkbox" />
+                    <label>Kurta</label><br />
+                    <input type="checkbox" />
+                    <label>Trousers</label><br />
+                    <input type="checkbox" />
+                    <label>Tshirt</label><br />
+                    <input type="checkbox" />
+                    <label>Kurtas</label> -->
+                </div>
+                <div>
+                    <h4>BRAND</h4>
+                    <input type="checkbox" />
+                    <label>Kalini<span>&nbsp;(4232)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Mitera<span>&nbsp;(1122)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Saree mall<span>&nbsp;(2812)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Pothys<span>&nbsp;(2601)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Charukriti<span>&nbsp;(2854)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Anouk<span>&nbsp;(5631)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Unnati Silks<span>&nbsp;(3392)</span></label><br/>
+                    <input type="checkbox" />
+                    <label>Kala Mandir<span>&nbsp;(2516)</span></label>
+                    <p class="more">+930 more</p>
+                </div>
+                
+                <div>
+                    <h4>COLOUR</h4>
+                    <input type="checkbox" />
+                    <span class="colour"></span>
+                    <label>Blue<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:green"></span>
+                    <label>Green<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:red"></span>
+                    <label>Red<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:pink"></span>
+                    <label>Pink<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:yellow"></span>
+                    <label>Yellow<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:grey"></span>
+                    <label>Grey<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:Black"></span>
+                    <label>Black<span>&nbsp;(3312)</span></label>
+                    <p class="more">+38 more</p>
+                </div>
+
+                <div>
+                <h4>PRICE</h4>
+                <input type="checkbox"/>
+                <label>Rs. 244 to Rs. 18434<span>&nbsp;(123783)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 18434 to Rs. 36624<span>&nbsp;(176)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 36624 to Rs. 54814<span>&nbsp;(5)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 54814 to Rs. 73004<span>&nbsp;(5)</span></label><br />
+                </div>
+                <div>
+                <h4>DISCOUNT RANGE</h4>
+                <input type="radio"/>
+                <label>10% and above</label><br />
+                <input type="radio"/>
+                <label>20% and above</label><br />
+                <input type="radio"/>
+                <label>30% and above</label><br />
+                <input type="radio"/>
+                <label>40% and above</label><br />
+                <input type="radio"/>
+                <label>50% and above</label><br />
+                <input type="radio"/>
+                <label>60% and above</label><br />
+                <input type="radio"/>
+                <label>70% and above</label><br />
+                <input type="radio"/>
+                <label>80% and above</label><br />
+                </div>
+                
+
+            </div>
+            <div id="rightSection">
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19253020/2022/7/29/b7f91a31-0810-4fe0-bde5-3f8ba1f5b7a21659081442776KALINIWhiteGold-TonedZariSaree1.jpg" alt="">
+                    <h4>Kalini</h4>
+                    <p>Saree</p>
+                    <span class="box">
+                        <b>4.1</b>
+                        <img src="./star.png" alt="">
+                        <b>| 14.1k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;474 </strong>
+                        <span>MRP
+                            <del>&#8377;2496</del>
+                        </span>
+                        <b>(81% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;474 </strong>
+                            <span>MRP
+                                <del>&#8377;2496</del>
+                            </span>
+                            <b>(81% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                 
+                <div class="main">
+                    <a href="Myntra page1.html">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18709036/2022/8/3/d60cffe1-eca3-40b9-830c-7def1779baac1659507299726-Metallic-colored-satin-striped-polyester-saree-3891659507298-1.jpg" alt="">
+                </a>
+                    <h4>Tiki Imli</h4>
+                    <p>Striped Saree</p>
+
+                    <span class="box">
+                        <b>4.5</b>
+                        <img src="./star.png" alt="">
+                        <b>| 1.9k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;961 </strong>
+                        <span>MRP
+                            <del>&#8377;2598</del>
+                        </span>
+                        <b>(63% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;961 </strong>
+                            <span>MRP
+                                <del>&#8377;2598</del>
+                            </span>
+                            <b>(63% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+            
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18302804/2023/3/29/cb7e21f1-4a43-4955-ab5a-b5a72af834f31680084902995-Mitera-Cream-Coloured--Red-Floral-Silk-Blend-Saree-916800849-1.jpg" alt="">
+                    <h4>Mitera</h4>
+                    <p>Floral Silk Blend Saree</p>
+
+                    <span class="box">
+                        <b>4.4</b>
+                        <img src="./star.png" alt="">
+                        <b>| 1k</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;1634 </strong>
+                        <span>MRP
+                            <del>&#8377;10899</del>
+                        </span>
+                        <b>(85% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1634 </strong>
+                            <span>MRP
+                                <del>&#8377;10899</del>
+                            </span>
+                            <b>(85% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19223592/2022/7/22/8d63f065-e04b-4bc5-bca8-e012b07dbe941658493195001SangriaWomenMultiSarees1.jpg" alt="">
+                    <h4>Sangria</h4>
+                    <p>Colourblocked Pure Saree</p>
+
+                    <span class="box">
+                        <b>3.7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 1.2k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1700</del>
+                        </span>
+                        <b>(80% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1700</del>
+                            </span>
+                            <b>(80% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22536178/2023/3/28/060630ba-0cb0-46f5-ab19-59a0d7502af41679989291511KALINIMaroonBlueWovenDesignZariPureSilkKanjeevaramSaree1.jpg" alt="">
+                    <h4>Kalini</h4>
+                    <p>Wowen Design Saree</p>
+
+                    <span class="box">
+                        <b>3.8</b>
+                        <img src="./star.png" alt="">
+                        <b>| 269</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;626 </strong>
+                        <span>MRP
+                            <del>&#8377;3299</del>
+                        </span>
+                        <b>(81% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;626 </strong>
+                            <span>MRP
+                                <del>&#8377;3299</del>
+                            </span>
+                            <b>(81% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22906696/2023/4/26/eb1ce687-f0d6-4c08-9302-ec54d9104d071682509432437MarooncolourEmbroideredCottonSaree1.jpg" alt="">
+                    <h4>Kalyan Silks</h4>
+                    <p>Mysore Silk Blend Saree</p>
+
+                    <span class="box">
+                        <b>4.2</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.3k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;2807 </strong>
+                        <span>MRP
+                            <del>&#8377;3119</del>
+                        </span>
+                        <b>(10% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;2807 </strong>
+                            <span>MRP
+                                <del>&#8377;3119</del>
+                            </span>
+                            <b>(10% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22389988/2023/3/17/08c41a42-f941-4b60-b58c-d801fb1bba131679000090470Sarees1.jpg" alt="">
+                    <h4>Indya</h4>
+                    <p>Ready to wear Saree & Blouse</p>
+
+                    <span class="box">
+                        <b>4.7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 13</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;4160 </strong>
+                        <span>MRP
+                            <del>&#8377;5200</del>
+                        </span>
+                        <b>(20% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;4160 </strong>
+                            <span>MRP
+                                <del>&#8377;5200</del>
+                            </span>
+                            <b>(20% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/15935044/2021/12/2/49322cc5-fa6a-4bf7-999b-f0cccf92a3d31638425197908-Anouk-Yellow-Zari-Pure-Silk-Banarasi-Saree-4671638425197077-1.jpg" alt="">
+                    <h4>Anouk</h4>
+                    <p>Banrasi Pure Silk Saree</p>
+
+                    <span class="box">
+                        <b>4.3</b>
+                        <img src="./star.png" alt="">
+                        <b>| 749</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;909 </strong>
+                        <span>MRP
+                            <del>&#8377;3499</del>
+                        </span>
+                        <b>(73% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;909 </strong>
+                            <span>MRP
+                                <del>&#8377;3499</del>
+                            </span>
+                            <b>(73% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21574700/2023/1/30/b236eed3-b326-406b-920d-88c7f5cb491f1675069295566-Silk-Land-Floral-Zari-Tissue-Mysore-Silk-Saree-5161675069294-1.jpg" alt="">
+                    <h4>Silk Land</h4>
+                    <p>Floral Mysore Silk Saree</p>
+
+                    <span class="box">
+                        <b>7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.9k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;1092 </strong>
+                        <span>MRP
+                            <del>&#8377;8400</del>
+                        </span>
+                        <b>(87% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1092 </strong>
+                            <span>MRP
+                                <del>&#8377;8400</del>
+                            </span>
+                            <b>(87% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22786206/2023/4/15/c4747257-d0c1-42ae-a8a8-419fe3073f111681535476556Sarees1.jpg" alt="">
+                    <h4>fab Viva</h4>
+                    <p>Woven Banarsi Saree</p>
+
+                    <span class="box">
+                        <b>2.1</b>
+                        <img src="./star.png" alt="">
+                        <b>| 12</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;1220 </strong>
+                        <span>MRP
+                            <del>&#8377;3699</del>
+                        </span>
+                        <b>(67% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1220 </strong>
+                            <span>MRP
+                                <del>&#8377;3699</del>
+                            </span>
+                            <b>(67% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/23058884/2023/5/6/bce5a186-2182-4295-8882-7ef3152422641683370794327KaliniGreenSilkBlendEthnicWovenDesignFestiveSareewithMatchin1.jpg" alt="">
+                    <h4>Kalini</h4>
+                    <p>Zari Banarsi Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                   
+                    <span class="secText">
+                        <strong>&#8377;599 </strong>
+                        <span>MRP
+                            <del>&#8377;684</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22906708/2023/4/26/b9a355fb-16da-46a0-96ff-6d730e9c33981682509446540OliveGreenLehriyawovenTussarSaree1.jpg" alt="">
+                    <h4>Kalyan Silks</h4>
+                    <p>Woven Tussar Saree</p>
+
+                    <span class="box">
+                        <b>4.5</b>
+                        <img src="./star.png" alt="">
+                        <b>| 18.6K</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;999 </strong>
+                        <span>MRP
+                            <del>&#8377;1263</del>
+                        </span>
+                        <b>(25% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1325 </strong>
+                            <span>MRP
+                                <del>&#8377;1921</del>
+                            </span>
+                            <b>(25% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13792172/2021/4/5/4a457af8-a806-4ab2-9f4f-1f15835599ed1617603803561-Banarasi-border-301617603802640-1.jpg" alt="">
+                    <h4>Anouk</h4>
+                    <p>Solid Banrasi Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;769 </strong>
+                        <span>MRP
+                            <del>&#8377;1299</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onsize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22565132/2023/3/29/c03f26ec-50ae-4f37-8eff-d505f94b8c521680108168038SareemallOffWhiteBhagalpuriSilkEthnicPrintedFestiveSareewith1.jpg" alt="">
+                    <h4>Saree Mall</h4>
+                    <p>Ethinic Dabu Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;550 </strong>
+                        <span>MRP
+                            <del>&#8377;800</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22866694/2023/4/24/b699d978-6a8f-4064-bcaf-f2480db9f4a41682349679691KaliniOrangeSilkBlendEthnicWovenDesignFestiveSareewithMatchi1.jpg" alt="">
+                    <h4>Kalini</h4>
+                    <p>Woven Banarasi Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;789 </strong>
+                        <span>MRP
+                            <del>&#8377;1399</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22670770/2023/4/6/ebb6102e-9746-460c-8c74-27c8750399251680769953295GorgoneGreyEthnicMotifsSilkBlendSareewithBlousePiece1.jpg" alt="">
+                    <h4>GORGONE</h4>
+                    <p>Paisley Woven Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22906666/2023/4/26/438d8d66-024b-421b-b59d-c6461f62f9de1682509401131NavyBlueRedEthnicMotifsPaithaniSaree1.jpg" alt="">
+                    <h4>Kalyan Silks</h4>
+                    <p>Ethinic Pure Silk Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                   
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22278562/2023/3/10/17904910-9e26-4134-bec3-d0f13d2875791678445997670AnoukPinkGreenWovenDesignZariSilkBlendPatolaSaree1.jpg" alt="">
+                    <h4>Anouk</h4>
+                    <p>Woven Design Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20058548/2022/9/17/217abfa7-a2cc-451b-b11a-a5a1eed84ec21663428017176MiteraSeaGreenWhiteBandhaniEmbroideredPureGeorgetteBandhaniS1.jpg" alt="">
+                    <h4>Mitera</h4>
+                    <p>Bandhani Pure Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;987</strong>
+                        <span>MRP
+                            <del>&#8377;1365</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21574724/2023/1/30/a55e1440-2df2-4a3e-a45f-89f4f97695d71675063853223-Silk-Land-Floral-Zari-Art-Silk-Chanderi-Saree-38416750638525-1.jpg" alt="">
+                    <h4>Silk Land</h4>
+                    <p>Kalamkari Silk Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;599 </strong>
+                        <span>MRP
+                            <del>&#8377;745</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16846766/2022/2/3/8961850f-1485-44f0-b0d7-9d50cb1ab4da1643867897802SatinPrintedSaree1.jpg" alt="">
+                    <h4>Anouk</h4>
+                    <p>Floral Satin Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;1142 </strong>
+                        <span>MRP
+                            <del>&#8377;1874</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16287682/2021/12/15/3827ff9f-e3ff-468f-a36f-85835f48267b1639567243017-Saree-Mall-Black-Linen-Ethnic-Woven-Design-Traditional-Wear--1.jpg" alt="">
+                    <h4>Saree Mall</h4>
+                    <p>Floral Banarasi Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;887 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10430798/2022/4/5/5a1f58d4-e6a5-4cf4-bb77-0cef90457d6c1649157440322-Mitera-Magenta-Silk-Blend-Woven-Design-Banarasi-Saree-167164-1.jpg" alt="">
+                    <h4>Mitera</h4>
+                    <p>Woven Design Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                   
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11165184/2020/1/13/7021b9f0-1111-4c3f-874a-24be2dd68ff71578914561894-Rajnandini-Beige-Cotton-Woven-Traditional-Saree-With-Tassel--1.jpg" alt="">
+                    <h4>Rajnandini</h4>
+                    <p>Woven Design Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;780 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21332208/2022/12/28/2492a972-7d35-4901-9dda-1dc8c1ed50021672223348303JinaxTealPinkWovenDesignZariPureSilkBanarasiSaree1.jpg" alt="">
+                    <h4>Kalini</h4>
+                    <p>Woven Pure Silk Saree</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;549 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(50% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                
+                <div class="downline"></div>
+                <div class="bottomFlex">
+                <p>Page 1 of 1831</p>
+                <ul class="nextPage">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+                <div class="lastButton">
+                    <button>
+                        NEXT >
+                    </button>
+                </div>
+                
+                </div>
+                
+            </div>
+        </div>
+</body>
+
+</html>

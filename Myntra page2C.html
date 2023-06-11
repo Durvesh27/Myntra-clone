@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Products page</title>
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #main {
+        width: 100%;
+        /* height: 1200px; */
+        /* border: 2px solid black; */
+    }
+
+    #navbar {
+        width: 100%;
+        height: 80px;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+        z-index: 10;
+    }
+
+    #icon {
+        width: 5%;
+        /* border:1px solid blue; */
+        box-sizing: border-box;
+    }
+
+    #icon img {
+        width: 105px;
+        height: 60px;
+        margin-top: 15px;
+    }
+
+    #navi {
+        width: 35%;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+        position: relative;
+    }
+    #navi div a{
+    text-decoration: none;
+    color:black;
+}
+    .text {
+        position: absolute;
+        top: 28px;
+        right: 3px;
+        font-size: 10px;
+        font-weight: 645;
+        color: #ff3f6c;
+    }
+
+    #search {
+        width: 30%;
+        display: flex;
+        align-items: center;
+
+        position: relative;
+    }
+
+    #search input {
+        height: 45%;
+        width: 100%;
+        padding-left: 43px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: rgb(243, 239, 239);
+
+    }
+
+    #search i {
+        margin-right: 10px;
+        position: absolute;
+        top: 33px;
+        left: 12px;
+    }
+
+    #profile {
+        width: 15%;
+        height: 80px;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+
+    }
+
+    #pp {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #pp i {
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+
+    #wishlist {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #wishlist i {
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+
+
+
+    #bag {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #bag i {
+        margin-top: 20px;
+        margin-left: 25px;
+        margin-right: 20px;
+    }
+
+    /* body CSS */
+    #body {
+        width: 100%;
+        /* height: 800px; */
+        border: 1px solid #edebef;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+
+    #body>div:nth-child(1) {
+        width: 16%;
+        /* border: 1px solid red; */
+
+    }
+
+    #body>div:nth-child(1) h4 {
+        margin-bottom: 10px;
+
+    }
+
+    #rightSection {
+        width: 84%;
+        border-left: 1px solid #edebef;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        /* padding-top: 25px;
+        padding-left: 15px; */
+        padding-top: 24px;
+    padding-left: 15px;
+    padding-right: 20px;
+    }
+
+    .top1 {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        margin-left: 20px;
+    }
+
+    .top1 p:nth-child(1) {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .top1 p:nth-child(2) {
+        font-size: 16px;
+    }
+
+    .top2 {
+        display: flex;
+    }
+
+    .top2 p {
+        font-weight: bold;
+        width: 11%;
+        padding-left: 27px;
+        box-sizing: border-box;
+    }
+    .clear{
+    font-size: 14px;
+    color:#ff3f6c;
+    text-transform: uppercase;
+    visibility: hidden;
+    }
+    .top2 .drop {
+        width: 74%;
+        display: flex;
+    }
+
+    .top2 .drop div {
+        font-size: 14px;
+        margin-right: 20px;
+    }
+
+    .top2 .drop div select {
+        border: none;
+        outline: none;
+
+    }
+
+    .top2 .drop-option {
+        width: 30%;
+    }
+
+    .top2 .drop-option select {
+        margin: auto;
+        display: block;
+        width: 60%;
+        height: 35px;
+    }
+
+    #leftSection {
+        margin-top: 20px;
+    }
+
+    #leftSection div:nth-child(1) {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+    }
+
+    #leftSection div:nth-child(2){
+        margin-bottom: 15px;
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(4){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(5){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(6){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection .more{
+        font-size: 15px;
+    margin: 6px 0 15px 35px;
+    color: #ff3f6c;
+    }
+
+    #leftSection div h4 {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    #leftSection div input{
+        width:15px;
+        height:15px;
+        margin-right: 7px;
+    }
+    #leftSection div input,
+    label {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    #leftSection div label span{
+        font-size: 11px;
+        color:rgb(137, 136, 136)
+    }
+    #leftSection>div:nth-child(3){
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+
+    }
+    #leftSection .colour{
+        display: inline-block;
+        width:15px;
+        height:15px;
+        background-color: blue;
+        border-radius:50%;
+    }
+    #rightSection .main{
+        width: 17%;
+        height: 358px;
+        position: relative;
+        /* border: 1px solid blue; */
+        z-index: 1;
+    }
+
+    #rightSection .main:hover {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    #rightSection .main img {
+        width: 100%;
+        height: 78%;
+        /* margin: 26px 12px; */
+    }
+
+    #rightSection .box {
+        border: 1px solid #eaeaec;
+        background-color: hsla(0, 0%, 100%, .8);
+        color: black;
+        padding: 2px;
+        font-size: 12px;
+        position: absolute;
+        top: 240px;
+        left: 10px;
+        opacity: 0.8;
+        border-radius: 2px;
+    }
+
+    #rightSection .box>img {
+        height: 10px;
+        width: 12px;
+    }
+
+    #rightSection .secText {
+        margin-left: 10px;
+    }
+
+    #rightSection .secText strong {
+        font-size: 14px;
+    }
+
+    #rightSection .secText span {
+        font-size: 12px;
+        color: grey
+    }
+
+    #rightSection .secText b {
+        font-size: 12px;
+        color: rgb(255, 204, 110)
+    }
+
+    #rightSection .newSeason {
+        background: rgba(255, 63, 108, .8);
+        position: absolute;
+        top: 16px;
+        left: 0;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 0 4px;
+        line-height: 16px;
+    }
+
+    #rightSection .newSeason::after {
+        content: "";
+        position: absolute;
+        border-color: rgba(255, 63, 108, .5) transparent rgba(255, 63, 108, .5) rgba(255, 63, 108, .8);
+        border-style: solid;
+        border-width: 8px;
+        left: 100%;
+        width: 0;
+        height: 0;
+        top: 0;
+    }
+
+    .container {
+        /* border:1px solid red; */
+        height: 130px;
+        /* position: absolute;
+    top: 240px; */
+        width: 100%;
+        /* z-index: 10; */
+        background-color: white;
+        display: none;
+    }
+
+    #rightSection>div:hover {
+        .container {
+            display: block;
+            position: absolute;
+            top: 230px;
+            /* border: 1px solid red; */
+        }
+
+    }
+
+
+
+
+    .container button {
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 30px;
+        background: white;
+        border: 1px solid #c7c5c5;
+        border-radius: 2px;
+    }
+    .container button:hover{
+        border: 1px solid black;
+    }
+
+    .container p {
+        color: #8a8989;
+        font-size: 14px;
+        margin-left: 10px;
+        margin-top: 15.5px;
+        margin-bottom: 3px;
+    }
+
+    .container span:nth-child(3) {
+        margin-left: 10px;
+    }
+
+    #rightSection>div>h4:nth-child(2) {
+        /* margin-bottom: 2px; */
+        margin-left: 10px;
+    }
+
+    #rightSection>div>p:nth-child(3) {
+        margin-bottom: 3px;
+        font-size: 14px;
+        margin-left: 10px;
+        color: #535766;
+    }
+   #rightSection .downline{
+    width:98%;
+    height:1px;
+    background-color:#edebef ;
+   }
+   #rightSection .bottomFlex{
+    width: 100%;
+    display: flex;
+    margin: 50px 0;
+   }
+    .bottomFlex p{
+        width:33%;
+        font-size: 14px;
+       margin-top: 15px;
+    }
+    .bottomFlex .nextPage{
+        width:38%;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        
+
+    }
+    .bottomFlex .nextPage li{
+        padding: 0 10px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    .bottomFlex .nextPage li:nth-child(1){
+        background-color: black;
+        color: white;
+        height: 30px;
+        padding-top:8px;
+        
+    }
+    .bottomFlex .nextPage li:hover{
+        height: 30px;
+      border:1px solid rgb(158, 156, 156);  
+      padding-top:8px;
+    }
+    .bottomFlex .lastButton{
+        width:28%;
+        
+    }
+    .bottomFlex .lastButton button{
+        height: 45px;
+    width: 25%;
+    border: 1px solid #b9b5b5;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-left: 40px;
+    }
+    .bottomFlex .lastButton button:hover{
+    border:1px solid black;
+    }
+</style>
+
+<body>
+    <div id="main">
+
+        <div id="navbar">
+            <div id="icon">
+                <a href="index.html">
+                    <img src="./myntraLOGO.webp" alt="">
+                </a>
+                
+            </div>
+            <div id="navi">
+                <div><a href="Myntra page2A.html">Men</a></div>
+                <div><a href="Myntra page2B.html">Women</a></div>
+                <div><a href="Myntra page2C.html">Kids</a></div>
+                <div><a href="Myntra page2D.html">Home & Living</a></div>
+                <div><a href="Myntra page2E.html">Beauty</a></div>
+                <div>Studio</div>
+                <span class="text">NEW</span>
+
+            </div>
+            <div id="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                <input type="search" placeholder="Search for products,brands and more" />
+
+            </div>
+            <div id="profile">
+                <div id="pp">
+                    <i class="fa-solid fa-user "></i>
+                    <div style="margin-top: 3px;margin-left: 18px;">Profile</div>
+                </div>
+                <div id="wishlist">
+                    <i class="fa-solid fa-cart-shopping "></i>
+                    <div style="margin-top: 3px;margin-left: 20px;">Wishlist</div>
+                </div>
+                <div id="bag">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <div style="margin-top: 3px;margin-left: 20px;">Bag</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="top1">
+            <p>Home /<b> Kids Wear Online Store</b> </p>
+            <p><b>Kids Wear Online Store</b>-249755 items </p>
+        </div>
+        <div class="top2">
+            <p>FILTERS</p>
+            <p class="clear">Clear All</p>
+            <div class="drop">
+                <div>
+                    <span>Age</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Bundles</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Country of Origin</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Size</span>
+                    <select></select>
+                </div>
+
+            </div>
+            <div class="drop-option">
+                <select>
+                    <option>Recommended</option>
+                    <option>Whats new</option>
+                    <option>Popularity</option>
+                    <option>Discounts</option>
+                    <option>Price:High-to-low</option>
+                    <option>Price:Low-to-high</option>
+                </select>
+            </div>
+        </div>
+        <div id="body">
+            <div id="leftSection">
+             <div>
+                <input type="radio" />
+                <label><b>Boys</b></label><br />
+                <input type="radio" />
+                <label><b>Girls</b></label>  
+             </div>
+                <div>
+                    <h4>CATEGORIES</h4>
+                    <input type="checkbox" />
+                    <label>T-Shirt <span>&nbsp;(15631)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Dresses<span>&nbsp;(1567)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Clothing Sets<span>&nbsp;(15861)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Sweat Shirts<span>&nbsp;(14569)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Kurta Sets<span>&nbsp;(11831)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Shorts<span>&nbsp;(7536)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Shirts<span>&nbsp;(1535)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Tops<span>&nbsp;(2255)</span></label>
+                    <p class="more">+268 more</p>
+                </div>
+                <div>
+                    <h4>BRAND</h4>
+                    <input type="checkbox" />
+                    <label>Gini & Joy<span>&nbsp;(11581)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Hopscotch<span>&nbsp;(1122)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Pantaloons Junior<span>&nbsp;(2812)</span></label><br />
+                    <input type="checkbox" />
+                    <label>H&M<span>&nbsp;(2601)</span></label><br />
+                    <input type="checkbox" />
+                    <label>V-Mart<span>&nbsp;(2854)</span></label><br />
+                    <input type="checkbox" />
+                    <label>BAESD<span>&nbsp;(5631)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Max<span>&nbsp;(3392)</span></label><br/>
+                    <input type="checkbox" />
+                    <label>YK<span>&nbsp;(2516)</span></label>
+                    <p class="more">+1207 more</p>
+                </div>
+                
+                <div>
+                    <h4>COLOUR</h4>
+                    <input type="checkbox" />
+                    <span class="colour"></span>
+                    <label>Blue<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:green"></span>
+                    <label>Green<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:red"></span>
+                    <label>Red<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:pink"></span>
+                    <label>Pink<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:yellow"></span>
+                    <label>Yellow<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:navy"></span>
+                    <label>Navy blur<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:Black"></span>
+                    <label>Black<span>&nbsp;(3312)</span></label>
+                    <p class="more">+38 more</p>
+                </div>
+
+                <div>
+                <h4>PRICE</h4>
+                <input type="checkbox"/>
+                <label>Rs. 75 to Rs. 14806<span>&nbsp;(249783)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 4806 to Rs. 29537<span>&nbsp;(33)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 44268 to Rs. 58999<span>&nbsp;(7)</span></label>
+                </div>
+                <div>
+                <h4>DISCOUNT RANGE</h4>
+                <input type="radio"/>
+                <label>10% and above</label><br />
+                <input type="radio"/>
+                <label>20% and above</label><br />
+                <input type="radio"/>
+                <label>30% and above</label><br />
+                <input type="radio"/>
+                <label>40% and above</label><br />
+                <input type="radio"/>
+                <label>50% and above</label><br />
+                <input type="radio"/>
+                <label>60% and above</label><br />
+                <input type="radio"/>
+                <label>70% and above</label><br />
+                <input type="radio"/>
+                <label>80% and above</label><br />
+                </div>
+                
+
+            </div>
+            <div id="rightSection">
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22204518/2023/3/2/a9b7d358-129e-4170-82d4-1166e59a1f451677770727893Tshirts1.jpg" alt="">
+                    <h4>HELLCAT</h4>
+                    <p>Boys pack of 5 Cotton T-Shirts</p>
+                    <span class="box">
+                        <b>3.9</b>
+                        <img src="./star.png" alt="">
+                        <b>| 141</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;714 </strong>
+                        <span>MRP
+                            <del>&#8377;6499</del>
+                        </span>
+                        <b>(89% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 3-4Y</p>
+                        <span class="secText">
+                            <strong>&#8377;714 </strong>
+                            <span>MRP
+                                <del>&#8377;6499</del>
+                            </span>
+                            <b>(89% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                 
+                <div class="main">
+                    <a href="Myntra page1.html">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22072090/2023/2/21/9a0bb86f-541b-4802-a448-dfb48375fff81676984097443MarsInfinitiCottonHalfPantandT-shirtsetPackof31.jpg" alt="">
+                </a>
+                    <h4>Mars Infiniti</h4>
+                    <p>Pack of 3 Printed Clothing Set</p>
+
+                    <span class="box">
+                        <b>4.3</b>
+                        <img src="./star.png" alt="">
+                        <b>| 584</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;630 </strong>
+                        <span>MRP
+                            <del>&#8377;1000</del>
+                        </span>
+                        <b>(65% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 3-4Y</p>
+                        <span class="secText">
+                            <strong>&#8377;630 </strong>
+                            <span>MRP
+                                <del>&#8377;1000</del>
+                            </span>
+                            <b>(65% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+            
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20547000/2022/12/3/0de357cc-39a6-425b-af38-7e6d450eb5251670011863109GoogoGaagaBoysBlackOrangePrintedPureCottonClothingSet1.jpg" alt="">
+                    <h4>Googo Gaaga</h4>
+                    <p>Printed Cotton Clothing Set</p>
+
+                    <span class="box">
+                        <b>4.2</b>
+                        <img src="./star.png" alt="">
+                        <b>| 1.1k</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;476 </strong>
+                        <span>MRP
+                            <del>&#8377;1400</del>
+                        </span>
+                        <b>(67% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 2-3Y</p>
+                        <span class="secText">
+                            <strong>&#8377;476 </strong>
+                            <span>MRP
+                                <del>&#8377;1400</del>
+                            </span>
+                            <b>(67% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22797230/2023/5/15/8ccd9bf0-8620-4526-ba4b-0cf7fd7b4a441684149059945-US-Polo-Assn-Kids-Boys-Clothing-Set-6351684149059360-1.jpg" alt="">
+                    <h4>US Polo Assn. Kids</h4>
+                    <p>Boys Printed T-Shirt & Short</p>
+
+                    <span class="box">
+                        <b>3.7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 1.2k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1700</del>
+                        </span>
+                        <b>(80% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 2-3Y</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1700</del>
+                            </span>
+                            <b>(80% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22508642/2023/3/25/6c5f1070-ab90-421e-8a2e-fbd1e4ccc2631679691490894BONKIDSBoysWhitePrintedPocketsT-shirt2.jpg" alt="">
+                    <h4>Bonkids</h4>
+                    <p>Boys Printed T-Shirt</p>
+
+                    <span class="box">
+                        <b>4.4</b>
+                        <img src="./star.png" alt="">
+                        <b>| 286</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;399 </strong>
+                        <span>MRP
+                            <del>&#8377;1332</del>
+                        </span>
+                        <b>(70% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: 3-4Y</p>
+                        <span class="secText">
+                            <strong>&#8377;399 </strong>
+                            <span>MRP
+                                <del>&#8377;1332</del>
+                            </span>
+                            <b>(70% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17766914/2022/4/9/c6e27e53-6bdf-414a-89f4-35f07aa90ede1649487511828-x2o-Boys-Yellow-Printed-Outdoor-Shorts-4921649487511740-11.jpg" alt="">
+                    <h4>x2o</h4>
+                    <p>Boys Pack of 3 Outdoor Shorts</p>
+
+                    <span class="box">
+                        <b>4.2</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.3k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;2807 </strong>
+                        <span>MRP
+                            <del>&#8377;3119</del>
+                        </span>
+                        <b>(10% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;2807 </strong>
+                            <span>MRP
+                                <del>&#8377;3119</del>
+                            </span>
+                            <b>(10% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22499638/2023/3/24/e52ed259-d175-4949-8730-5d1db4ec29191679653590227SmartRAHOBoysBlackMustardT-shirtwithTrousers1.jpg" alt="">
+                    <h4>SmartRaho</h4>
+                    <p>Boys Cotton T-Shirt & Trouser</p>
+
+                    <span class="box">
+                        <b>4.7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 13</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;4160 </strong>
+                        <span>MRP
+                            <del>&#8377;5200</del>
+                        </span>
+                        <b>(20% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;4160 </strong>
+                            <span>MRP
+                                <del>&#8377;5200</del>
+                            </span>
+                            <b>(20% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20298724/2022/10/6/f7066a21-3608-42ab-b20c-32add0db5e9916650595403922-packvelourjoggers1.jpg" alt="">
+                    <h4>H&M</h4>
+                    <p>Boys Joggers Trousers</p>
+
+                    <span class="box">
+                        <b>4.3</b>
+                        <img src="./star.png" alt="">
+                        <b>| 749</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;909 </strong>
+                        <span>MRP
+                            <del>&#8377;3499</del>
+                        </span>
+                        <b>(73% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;909 </strong>
+                            <span>MRP
+                                <del>&#8377;3499</del>
+                            </span>
+                            <b>(73% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21384112/2023/2/7/6271a6e7-bb2e-4021-b384-992269cd03061675765140754-Skechers-Boys-Casual-Shoes-8421675765140420-1.jpg" alt="">
+                    <h4>Sketchers</h4>
+                    <p>Boys Lightweight Sneakers</p>
+
+                    <span class="box">
+                        <b>7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.9k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;1092 </strong>
+                        <span>MRP
+                            <del>&#8377;8400</del>
+                        </span>
+                        <b>(87% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1092 </strong>
+                            <span>MRP
+                                <del>&#8377;8400</del>
+                            </span>
+                            <b>(87% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17045988/2022/2/4/0d9dcffa-936e-4129-a098-e184862a1e9d1643958755775pspeachesMagentaFloralA-LineDress1.jpg" alt="">
+                    <h4>pspeaches</h4>
+                    <p>Floral Cotton Dress</p>
+
+                    <span class="box">
+                        <b>2.1</b>
+                        <img src="./star.png" alt="">
+                        <b>| 12</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;1220 </strong>
+                        <span>MRP
+                            <del>&#8377;3699</del>
+                        </span>
+                        <b>(67% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1220 </strong>
+                            <span>MRP
+                                <del>&#8377;3699</del>
+                            </span>
+                            <b>(67% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21619610/2023/1/19/7652df50-319d-441c-bbf7-32c6a96016a71674128100718Shorts1.jpg" alt="">
+                    <h4>DeFacto</h4>
+                    <p>Girls Cotton Mild Shorts</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                   
+                    <span class="secText">
+                        <strong>&#8377;599 </strong>
+                        <span>MRP
+                            <del>&#8377;684</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16201598/2022/6/2/51861d7f-e0d5-4240-8eaa-7aa71da9ae8f1654164970224-Crocs-Kids-Grey-Bayaband-Clogs-3421654164969823-1.jpg" alt="">
+                    <h4>Crocs</h4>
+                    <p>Kids Bayaband crocs</p>
+
+                    <span class="box">
+                        <b>4.5</b>
+                        <img src="./star.png" alt="">
+                        <b>| 18.6K</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;999 </strong>
+                        <span>MRP
+                            <del>&#8377;1263</del>
+                        </span>
+                        <b>(25% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;1325 </strong>
+                            <span>MRP
+                                <del>&#8377;1921</del>
+                            </span>
+                            <b>(25% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20996420/2022/11/30/fece763f-ce25-42e5-91e9-001ff0e366d71669817571360RedTapeUnisexKidsBlueMeshRunningNon-MarkingShoes1.jpg" alt="">
+                    <h4>Red Tape</h4>
+                    <p>Unisex Boys running shoes</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;769 </strong>
+                        <span>MRP
+                            <del>&#8377;1299</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onsize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22797300/2023/5/15/e8738482-e09e-4530-8446-5174983067591684136632299-US-Polo-Assn-Kids-Boys-Tshirts-3711684136631729-1.jpg" alt="">
+                    <h4>US Polo Assn. Kids</h4>
+                    <p>Boys set of two Cotton T-Shirts</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;550 </strong>
+                        <span>MRP
+                            <del>&#8377;800</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18307784/2022/5/18/7499149e-a396-4a38-a608-c1e3fa6a70ef1652850414359YKMarvelBoysBlack3PrintedAppliqueT-shirt1.jpg" alt="">
+                    <h4>YK Marvel</h4>
+                    <p>Boys Printed T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;789 </strong>
+                        <span>MRP
+                            <del>&#8377;1399</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: Onesize</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                
+                
+                
+                <div class="downline"></div>
+                <div class="bottomFlex">
+                <p>Page 1 of 1831</p>
+                <ul class="nextPage">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+                <div class="lastButton">
+                    <button>
+                        NEXT >
+                    </button>
+                </div>
+                
+                </div>
+                
+            </div>
+        </div>
+</body>
+
+</html>
